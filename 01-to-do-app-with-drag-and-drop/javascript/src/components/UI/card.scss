@@ -1,0 +1,16 @@
+@import "../colors";
+
+.card {
+  position: relative;
+  max-width: 400px;
+  color: $text-color;
+  background: $background-color;
+  border-radius: 10px;
+  -webkit-box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.25);
+  transform: translateX(-50%);
+}
+.card:not(:first-child) {
+  margin: 10px 0;
+}
