@@ -1,0 +1,13 @@
+.button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 60px;
+  font-size: 18px;
+  font-weight: 600;
+  background: #d69c14;
+  color: #000;
+  cursor: pointer;
+}
