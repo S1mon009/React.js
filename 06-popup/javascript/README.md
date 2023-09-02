@@ -23,6 +23,7 @@ After instalation run this command:
 # Features
 
 - React.js
+- JavaScript
 - Sass
 - Full responsive
 - Easy to use
