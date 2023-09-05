@@ -29,20 +29,20 @@
 ###
 # 🔗Live Demo
 - ## 01-to-do-app:
-  - [JavaScript](to-do-app-59bf3.firebaseapp.com)
+  - [JavaScript](https://to-do-app-59bf3.firebaseapp.com)
   - TypeScript: Comming soon
 - ## 02-qr-code-generator:
-  - [JavaScript](qr-code-generator-21389.firebaseapp.com)
+  - [JavaScript](https://qr-code-generator-21389.firebaseapp.com)
   - TypeScript: Comming soon
 - ## 03-otp-verification-form
-   - [JavaScript](otp-verifacation-form.firebaseapp.com)
+   - [JavaScript](https://otp-verifacation-form.firebaseapp.com)
    - TypeScript: Comming soon
 - ## 04-add-tags:
-   - [JavaScript](add-tags.firebaseapp.com)
+   - [JavaScript](https://add-tags.firebaseapp.com)
    - TypeScript: Comming soon
 - ## 05-ripple-effect-button:
-   - [JavaScript](ripple-effect-button.web.app)
-   - [TypeScript](ripple-button-typescript.firebaseapp.com)
+   - [JavaScript](https://ripple-effect-button.web.app)
+   - [TypeScript](https://ripple-button-typescript.firebaseapp.com)
 - ## 06-popup:
-   - [JavaScript](popup-37f20.firebaseapp.com)
-   - [TypeScript](popup-typescript.firebaseapp.com)
+   - [JavaScript](https://popup-37f20.firebaseapp.com)
+   - [TypeScript](https://popup-typescript.firebaseapp.com)
