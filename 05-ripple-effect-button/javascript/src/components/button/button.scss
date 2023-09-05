@@ -1,13 +1,39 @@
-.button {
+$btn-background-color: #d69c14;
+$btn-text-color: #000;
+$ripple-background-color: #fff;
+button {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 300px;
   height: 60px;
+  border: none;
+  border-radius: 5px;
   font-size: 18px;
   font-weight: 600;
-  background: #d69c14;
-  color: #000;
+  background: $btn-background-color;
+  color: $btn-text-color;
   cursor: pointer;
+  overflow: hidden;
+  span {
+    position: absolute;
+    background: $ripple-background-color;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    border-radius: 50%;
+    animation: ripple 1s linear infinite;
+  }
+  @keyframes ripple {
+    0% {
+      width: 0px;
+      height: 0px;
+      opacity: 0.5;
+    }
+    100% {
+      width: 500px;
+      height: 500px;
+      opacity: 0;
+    }
+  }
 }
