@@ -1,0 +1,36 @@
+@import "../colors";
+
+.tasks-container {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(200px, 80%, 400px);
+  .task-element {
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 10px;
+    color: $text-color;
+    background: $background-color;
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+    .task-date {
+      font-size: 12px;
+      font-weight: 500;
+    }
+    .task-title {
+      font-size: 22px;
+      font-weight: 500;
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
+    .trash-icon {
+      position: absolute;
+      right: 10px;
+      transform: translateY(-35px);
+      cursor: pointer;
+    }
+  }
+}
