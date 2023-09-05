@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Card from "../UI/card";
 import "./addTaskForm.scss";
 
 const AddTaskForm = (props) => {
@@ -23,35 +22,33 @@ const AddTaskForm = (props) => {
   }, [taskTitle, taskDate]);
 
   return (
-    <Card className="add-form" inset="100px 0 0 50%">
-      <form onSubmit={formSubmitHandler}>
-        <span className="form-title">Add task</span>
-        <div className="form-item">
-          <input
-            type="text"
-            id="task-title"
-            value={taskTitle}
-            onChange={taskTitleHandler}
-            required
-          ></input>
-          <label htmlFor="task-title">Title</label>
-        </div>
-        <div className="form-item">
-          <input
-            type="date"
-            id="task-date"
-            value={taskDate}
-            onChange={taskDateHandler}
-            required
-          ></input>
-          <label htmlFor="task-date">Date</label>
-        </div>
+    <form onSubmit={formSubmitHandler}>
+      <span className="form-title">Add task</span>
+      <div className="form-item">
+        <input
+          type="text"
+          id="task-title"
+          value={taskTitle}
+          onChange={taskTitleHandler}
+          required
+        ></input>
+        <label htmlFor="task-title">Title</label>
+      </div>
+      <div className="form-item">
+        <input
+          type="date"
+          id="task-date"
+          value={taskDate}
+          onChange={taskDateHandler}
+          required
+        ></input>
+        <label htmlFor="task-date">Date</label>
+      </div>
 
-        <button type="submit" disabled={formValid ? false : true}>
-          Save
-        </button>
-      </form>
-    </Card>
+      <button type="submit" disabled={formValid ? false : true}>
+        Save
+      </button>
+    </form>
   );
 };
 

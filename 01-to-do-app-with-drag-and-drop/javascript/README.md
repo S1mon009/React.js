@@ -1,4 +1,4 @@
-# To Do App with Drag and Drop
+# To Do App
 
 ![MIT License](https://img.shields.io/badge/Author-S1mon009-blue.svg) ![Static Badge](https://img.shields.io/badge/React-React?logo=react&logoColor=%2361DAFB&labelColor=%23555&color=%2361DAFB) ![Static Badge](https://img.shields.io/badge/JavaScript-JavaScript?logo=javascript&logoColor=%23F7DF1E&labelColor=%23555&color=%23F7DF1E) ![Static Badge](https://img.shields.io/badge/Sass-Sass?logo=sass&logoColor=%23CC6699&labelColor=%23555&color=%23CC6699) ![Static Badge](https://img.shields.io/badge/npm-npm?logo=npm&logoColor=%23CB3837&labelColor=%23555&color=%23CB3837)
 
@@ -24,14 +24,13 @@ After instalation run this command:
 
 - React.js
 - Sass
-- Drag and Drop
 - Full responsive
 - Easy to use
 
 # Contribution
 
 - Fork the repository [(Here is the guide)](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
-- Clone to your machine git clone https://github.com/YOUR_USERNAME/my-to-do-app-with-drag-and-drop.git
+- Clone to your machine git clone https://github.com/YOUR_USERNAME/my-to-do-app.git
 - Make your changes
 - Create a pull request
 
@@ -40,3 +39,7 @@ After instalation run this command:
 August 9, 2023
 
 - Initial release
+
+September 05, 2023
+
+- Updated code functionality

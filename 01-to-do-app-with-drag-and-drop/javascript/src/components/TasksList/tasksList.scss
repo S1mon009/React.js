@@ -1,33 +1,35 @@
-.tasks-container {
-  position: relative;
-  inset: 100px 0 0 50%;
-  margin-top: 10px;
-  .drag-icon {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  .drag-content {
-    padding: 10px 0 10px 25px;
-    margin-top: 10px;
-    cursor: pointer;
+@import "../colors";
 
-    .drag-date {
+.tasks-container {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(200px, 80%, 400px);
+  .task-element {
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 10px;
+    color: $text-color;
+    background: $background-color;
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+    .task-date {
       font-size: 12px;
       font-weight: 500;
     }
-    .drag-title {
+    .task-title {
       font-size: 22px;
       font-weight: 500;
-    }
-    .drag-title::first-letter {
-      text-transform: uppercase;
+      &::first-letter {
+        text-transform: uppercase;
+      }
     }
     .trash-icon {
       position: absolute;
-      top: 50%;
       right: 10px;
-      transform: translateY(-50%);
+      transform: translateY(-35px);
       cursor: pointer;
     }
   }

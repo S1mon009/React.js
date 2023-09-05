@@ -20,11 +20,7 @@ function App() {
     <>
       <Logo />
       <AddTaskForm onSubmit={AddTaskHandler} />
-      <TasksList
-        list={tasks}
-        onRemoveTaskHandler={RemoveTaskHandler}
-        onDragEnd={setTasks}
-      />
+      <TasksList list={tasks} onRemoveTaskHandler={RemoveTaskHandler} />
     </>
   );
 }
