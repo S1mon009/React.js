@@ -4,7 +4,7 @@
 
 My Popup was created using React.js and Sass, you can use it as you wish and it's free for personal or commercial use.
 
-![06-popup](https://github.com/S1mon009/React.js/assets/105738321/cf2349c6-6a0c-4312-80a3-8c568b384922)
+![06-popup](https://github.com/S1mon009/React.js/assets/105738321/533059f5-b7c6-49fc-9795-8e2a0425a830)
 
 # Instalation
 
