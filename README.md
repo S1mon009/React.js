@@ -39,7 +39,7 @@
    - TypeScript: Comming soon
 - ## 04-add-tags:
    - [JavaScript](https://04-add-tags.netlify.app)
-   - TypeScript: Comming soon
+   - [TypeScript](https://04-add-tags-typescript.netlify.app)
 - ## 05-ripple-effect-button:
    - [JavaScript](https://05-ripple-effect-button.netlify.app)
    - [TypeScript](https://05-ripple-effect-button-typescript.netlify.app)
