@@ -9,12 +9,10 @@
   .task-element {
     width: 100%;
     padding: 15px 20px;
+    margin-top: 10px;
     border-radius: 10px;
     color: $text-color;
     background: $background-color;
-    &:not(:first-child) {
-      margin-top: 10px;
-    }
     .task-date {
       font-size: 12px;
       font-weight: 500;
@@ -32,5 +30,8 @@
       transform: translateY(-35px);
       cursor: pointer;
     }
+  }
+  @media (max-width: 900px) {
+    top: 52%;
   }
 }
