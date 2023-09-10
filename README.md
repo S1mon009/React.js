@@ -30,10 +30,10 @@
 # 🔗Live Demo
 - ## 01-to-do-app:
   - [JavaScript](https://01-to-do-app.netlify.app)
-  - TypeScript: Comming soon
+  - [TypeScript](https://01-to-do-app-typescript.netlify.app)
 - ## 02-qr-code-generator:
   - [JavaScript](https://02-qr-code-generator.netlify.app)
-  - TypeScript: Comming soon
+  - [TypeScript](https://02-qr-code-generator-typescript.netlify.app)
 - ## 03-otp-verification-form
    - [JavaScript](https://03-otp-verification-form.netlify.app)
    - [TypeScript](https://03-otp-verifacation-form-typescript.netlify.app)
