@@ -37,10 +37,6 @@ After instalation run this command:
 
 # Changelogs
 
-August 9, 2023
+September 10, 2023
 
 - Initial release
-
-September 05, 2023
-
-- Updated code functionality
