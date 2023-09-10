@@ -36,7 +36,7 @@
   - TypeScript: Comming soon
 - ## 03-otp-verification-form
    - [JavaScript](https://03-otp-verification-form.netlify.app)
-   - TypeScript: Comming soon
+   - [TypeScript](https://03-otp-verifacation-form-typescript.netlify.app)
 - ## 04-add-tags:
    - [JavaScript](https://04-add-tags.netlify.app)
    - [TypeScript](https://04-add-tags-typescript.netlify.app)
