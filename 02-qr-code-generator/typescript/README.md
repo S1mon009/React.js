@@ -23,6 +23,7 @@ After instalation run this command:
 # Features
 
 - React.js
+- TypeScript
 - Sass
 - Full responsive
 - Easy to use
@@ -36,6 +37,6 @@ After instalation run this command:
 
 # Changelogs
 
-August 9, 2023
+September 10, 2023
 
 - Initial release
