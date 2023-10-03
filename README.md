@@ -46,3 +46,6 @@
 - ## 06-popup:
    - [JavaScript](https://06-popup.netlify.app)
    - [TypeScript](https://06-popup-typescript.netlify.app)
+- ## 07-accordion
+   - [JavaScript](https://07-accordion.netlify.app)
+   - [TypeScript](https://07-accordion-typescript.netlify.app)
