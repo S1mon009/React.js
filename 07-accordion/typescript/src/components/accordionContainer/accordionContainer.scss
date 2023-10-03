@@ -1,0 +1,8 @@
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../../../node_modules/bootstrap/scss/variables.scss";
+.accordion-container {
+  width: clamp(200px, 80%, 600px);
+  grid-gap: 15px;
+  color: $blue-900;
+  transition: 0.5s ease-in-out;
+}
