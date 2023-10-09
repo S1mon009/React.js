@@ -1,0 +1,16 @@
+$primary-color: #ffc107;
+$switch-button-background-color: #333;
+
+$text-color-light: #000;
+$body-background-color-light: #fbfaf8;
+
+$text-color-dark: rgba(255, 255, 255, 0.95);
+$body-background-color-dark: #1a1d20;
+body {
+  color: $text-color-light;
+  background: $body-background-color-light;
+  &.theme-dark {
+    color: $text-color-dark;
+    background: $body-background-color-dark;
+  }
+}
