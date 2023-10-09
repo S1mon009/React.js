@@ -8,5 +8,11 @@ main {
     padding: 20px;
     border: 1px solid $form-border-color;
     border-radius: 10px;
+    .error-checkbox {
+      transform: translateX(-25px);
+    }
+    .register {
+      padding-top: 15px;
+    }
   }
 }

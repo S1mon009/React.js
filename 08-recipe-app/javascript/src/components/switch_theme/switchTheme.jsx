@@ -21,6 +21,8 @@ const SwitchTheme = () => {
         onChange={toggleTheme}
         checked={theme === "" ? false : true}
       />
+      <i className="position-absolute bi bi-brightness-high"></i>
+      <i className="position-absolute bi bi-moon"></i>
       <span
         className="position-absolute d-inline-block rounded-circle"
         style={{ background: theme === "" ? "#ffc107" : "#333" }}

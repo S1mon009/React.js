@@ -1,4 +1,6 @@
 @import "../../themes";
+$text-color-sun-active: #000;
+$text-color-active-moon: rgba(255, 255, 255, 0.95);
 
 .toggle-theme {
   width: 60px;
@@ -10,9 +12,25 @@
     height: 30px;
     opacity: 0;
     cursor: pointer;
-    z-index: 2;
+    z-index: 3;
     &:checked ~ span {
       transform: translate(34px, 3.5px);
+    }
+    &:not(:checked) ~ .bi-brightness-high {
+      color: $text-color-sun-active;
+    }
+    &:checked ~ .bi-moon {
+      color: $text-color-active-moon;
+    }
+  }
+  i {
+    top: 27px;
+    z-index: 2;
+    &.bi-brightness-high {
+      transform: translateX(6px);
+    }
+    &.bi-moon {
+      right: 25px;
     }
   }
   span {

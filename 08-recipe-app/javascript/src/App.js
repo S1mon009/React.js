@@ -12,6 +12,7 @@ import Edit from "./pages/edit/edit";
 import Error from "./pages/error/error";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+import Register from "./pages/register/register";
 const router = createBrowserRouter([
   { path: "/", element: <Main />, errorElement: <Error /> },
   {
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
     element: <Login />,
     errorElement: <Error />,
   },
+  { path: "register", element: <Register />, errorElement: <Error /> },
   {
     path: "dashboard",
     element: <Dashboard />,
