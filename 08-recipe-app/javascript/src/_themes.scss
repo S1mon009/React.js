@@ -38,6 +38,12 @@ body {
     input {
       color: $text-color-dark;
       background: transparent;
+      &.checkbox {
+        color: #fff;
+        &:checked {
+          background: #0d6efd;
+        }
+      }
       &:focus {
         color: $text-color-dark;
         background: transparent;

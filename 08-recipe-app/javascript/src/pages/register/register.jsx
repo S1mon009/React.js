@@ -3,7 +3,7 @@ import SwitchTheme from "../../components/switch_theme/switchTheme";
 import Footer from "../../components/footer/footer";
 import { Formik } from "formik";
 import { Link } from "react-router-dom";
-import { addUser } from "../../supabase/setData";
+import { register } from "../../supabase/data";
 import "./register.scss";
 
 const Register = () => {
@@ -36,7 +36,7 @@ const Register = () => {
           }}
           onSubmit={(values, { setSubmitting }) => {
             setTimeout(() => {
-              addUser(values);
+              register(values);
               setSubmitting(false);
             }, 400);
           }}
@@ -94,7 +94,7 @@ const Register = () => {
               <div className="mb-3 form-check">
                 <input
                   type="checkbox"
-                  className="form-check-input"
+                  className="form-check-input checkbox"
                   id="inputCheckbox"
                   name="checkbox"
                   onChange={handleChange}

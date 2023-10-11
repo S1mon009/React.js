@@ -4,7 +4,7 @@ import SwitchTheme from "../../components/switch_theme/switchTheme";
 import Footer from "../../components/footer/footer";
 import { Formik } from "formik";
 import { Link } from "react-router-dom";
-import { getUser } from "../../supabase/getData";
+import { login } from "../../supabase/data";
 
 const Login = () => {
   return (
@@ -33,7 +33,7 @@ const Login = () => {
           }}
           onSubmit={(values, { setSubmitting }) => {
             setTimeout(() => {
-              getUser(values);
+              login(values);
               setSubmitting(false);
             }, 400);
           }}

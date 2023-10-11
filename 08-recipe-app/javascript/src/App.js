@@ -1,4 +1,3 @@
-// import logo from "./logo.svg";
 import "./_themes.scss";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { themeActions } from "./store/store";

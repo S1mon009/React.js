@@ -27,6 +27,7 @@ $text-color-active-moon: rgba(255, 255, 255, 0.95);
     top: 27px;
     z-index: 2;
     &.bi-brightness-high {
+      top: 27.5px;
       transform: translateX(6px);
     }
     &.bi-moon {

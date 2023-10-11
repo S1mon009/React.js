@@ -8,3 +8,8 @@ header {
     margin-left: 10px;
   }
 }
+@media (max-width: 500px) {
+  .app-name {
+    display: none;
+  }
+}
