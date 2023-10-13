@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="row">
         <div className="col">
           <Link to="/">
-            <img src={Logo} alt="Logo" />
+            <img src={Logo} alt="Logo" className="d-inline-block" />
           </Link>
           <span className="fs-2 fw-semibold app-name">Recipe app</span>
         </div>

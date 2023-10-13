@@ -1,0 +1,15 @@
+@import "../../themes";
+
+header {
+  border-bottom: 2px solid $header-border-bottom-color;
+}
+main {
+  min-height: 40rem;
+  padding: 0;
+  .sidebar {
+    position: relative;
+    width: 25%;
+    padding: 20px 0;
+    border-right: 2px solid $header-border-bottom-color;
+  }
+}

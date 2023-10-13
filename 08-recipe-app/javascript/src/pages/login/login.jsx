@@ -1,18 +1,20 @@
-import "./login.scss";
 import Header from "../../components/header/header";
 import SwitchTheme from "../../components/switch_theme/switchTheme";
 import Footer from "../../components/footer/footer";
+import LoginImage from "./Images/data-security-threat.png";
 import { Formik } from "formik";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../supabase/data";
+import "./login.scss";
 
 const Login = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <Header>
         <SwitchTheme />
       </Header>
-      <main className="d-flex justify-content-center align-items-center w-100">
+      <main className="d-flex justify-content-around align-items-center w-100">
         <Formik
           initialValues={{ email: "", password: "" }}
           validate={(values) => {
@@ -26,16 +28,18 @@ const Login = () => {
             }
             if (!values.password) {
               errors.password = "Required";
-            } else if (values.password.length < 8) {
-              errors.password = "Password must have 8 characters";
             }
             return errors;
           }}
-          onSubmit={(values, { setSubmitting }) => {
-            setTimeout(() => {
-              login(values);
+          onSubmit={async (values, { setSubmitting }) => {
+            setSubmitting(true);
+            const response = await login(values);
+            if (response) {
+              navigate("/dashboard");
+            }
+            if (!response) {
               setSubmitting(false);
-            }, 400);
+            }
           }}
         >
           {({
@@ -46,7 +50,6 @@ const Login = () => {
             handleBlur,
             handleSubmit,
             isSubmitting,
-            /* and other goodies */
           }) => (
             <form onSubmit={handleSubmit}>
               <div className="mb-3">
@@ -97,6 +100,7 @@ const Login = () => {
             </form>
           )}
         </Formik>
+        <img src={LoginImage} alt="Login" className="page-image" />
       </main>
       <Footer />
     </div>

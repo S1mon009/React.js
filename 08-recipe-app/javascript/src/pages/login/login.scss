@@ -9,4 +9,15 @@ main {
     border: 1px solid $form-border-color;
     border-radius: 10px;
   }
+  .page-image {
+    width: 45%;
+    margin-left: 20px;
+  }
+}
+@media (max-width: 840px) {
+  main {
+    .page-image {
+      display: none;
+    }
+  }
 }

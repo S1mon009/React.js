@@ -1,11 +1,19 @@
 header {
   height: 40px;
   padding: 40px 20px;
-  img {
+  .header-image {
     width: 45px;
   }
   .app-name {
     margin-left: 10px;
+  }
+  .buttons-header {
+    button {
+      a {
+        margin-right: 5px;
+      }
+      margin-right: 10px;
+    }
   }
 }
 @media (max-width: 500px) {

@@ -1,6 +1,7 @@
 import Header from "../../components/header/header";
 import SwitchTheme from "../../components/switch_theme/switchTheme";
 import Footer from "../../components/footer/footer";
+import JoinHand from "./Images/website-content-sections.png";
 import { Formik } from "formik";
 import { Link } from "react-router-dom";
 import { register } from "../../supabase/data";
@@ -12,7 +13,8 @@ const Register = () => {
       <Header>
         <SwitchTheme />
       </Header>
-      <main className="d-flex justify-content-center align-items-center w-100">
+      <main className="d-flex justify-content-around align-items-center w-100">
+        <img src={JoinHand} alt="Joined hand" />
         <Formik
           initialValues={{ email: "", password: "", checkbox: false }}
           validate={(values) => {
@@ -37,6 +39,7 @@ const Register = () => {
           onSubmit={(values, { setSubmitting }) => {
             setTimeout(() => {
               register(values);
+
               setSubmitting(false);
             }, 400);
           }}
