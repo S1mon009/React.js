@@ -6,12 +6,14 @@ import { useEffect } from "react";
 import Main from "./pages/main/main";
 import Login from "./pages/login/login";
 import Dashboard from "./pages/dashboard/dashboard";
+import Add from "./pages/add/add";
 import Recipe from "./pages/recipe/recipe";
 import Edit from "./pages/edit/edit";
 import Error from "./pages/error/error";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
 import Register from "./pages/register/register";
+import { getUserRecipies } from "./supabase/data";
 const router = createBrowserRouter([
   { path: "/", element: <Main />, errorElement: <Error /> },
   {
@@ -23,7 +25,9 @@ const router = createBrowserRouter([
   {
     path: "dashboard",
     element: <Dashboard />,
+    loader: getUserRecipies,
     children: [
+      { path: "add", element: <Add /> },
       {
         path: ":name",
         element: <Recipe />,

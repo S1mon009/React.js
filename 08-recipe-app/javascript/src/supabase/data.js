@@ -33,4 +33,13 @@ export const register = async ({ email, password }) => {
     alert(error);
   }
 };
-export const getRecipies = async () => {};
+export const getUserRecipies = async () => {
+  const { id } = JSON.parse(localStorage.getItem("userData"));
+  let { data: Recipies, error } = await supabase
+    .from("Recipies")
+    .select("recipies")
+    .eq("user_id", id);
+
+  console.log(Recipies);
+  return Recipies;
+};
