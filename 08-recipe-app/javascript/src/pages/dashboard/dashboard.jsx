@@ -13,7 +13,6 @@ import "./dashboard.scss";
 
 const Dashboard = () => {
   const data = useLoaderData();
-  // useSessionTimeout();
   console.log(data);
   return (
     <>
