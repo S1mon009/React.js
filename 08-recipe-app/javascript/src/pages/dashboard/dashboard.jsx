@@ -1,11 +1,19 @@
+import { useEffect } from "react";
 import Header from "../../components/header/header";
 import SwitchTheme from "../../components/switch_theme/switchTheme";
 import Footer from "../../components/footer/footer";
-import { useLoaderData, Outlet, Link } from "react-router-dom";
+import {
+  useLoaderData,
+  Outlet,
+  Link,
+  useSubmit,
+  useLocation,
+} from "react-router-dom";
 import "./dashboard.scss";
 
 const Dashboard = () => {
   const data = useLoaderData();
+  // useSessionTimeout();
   console.log(data);
   return (
     <>
@@ -39,10 +47,10 @@ const Dashboard = () => {
 
           <ul>
             {!data && <span className="add-first">No data</span>}
-            {/* <li className="fw-semibold recipe">
-                <span className="d-block w-100 date">2023-10-10</span>
-                <span className="d-block w-100 title">Szymon</span>
-              </li> */}
+            <li className="fw-semibold recipe">
+              <span className="d-block w-100 date">2023-10-10</span>
+              <span className="d-block w-100 title">Szymon</span>
+            </li>
           </ul>
         </div>
         <div className="recipe-details">
@@ -54,3 +62,16 @@ const Dashboard = () => {
   );
 };
 export default Dashboard;
+
+function useSessionTimeout() {
+  const submit = useSubmit();
+  const location = useLocation();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      submit(null, { method: "post", action: "/logout" });
+    }, 5 * 60_000);
+
+    return () => clearTimeout(timer);
+  }, [submit, location]);
+}
