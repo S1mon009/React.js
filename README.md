@@ -49,3 +49,5 @@
 - ## 07-accordion
    - [JavaScript](https://07-accordion.netlify.app)
    - [TypeScript](https://07-accordion-typescript.netlify.app)
+- ## 08-login-form
+   - [JavaScript](https://08-login-form.netlify.app/login)
