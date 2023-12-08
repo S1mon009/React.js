@@ -1,0 +1,20 @@
+img {
+  top: 20px;
+  left: 20px;
+  width: 50px;
+}
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(286px, 1fr));
+  gap: 20px 10px;
+  padding: 90px 0 40px 40px;
+}
+@media (max-width: 636px) {
+  .cards-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px 10px;
+    padding: 90px 20px 40px 20px;
+  }
+}
