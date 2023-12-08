@@ -52,3 +52,6 @@
 - ## 08-login-form
    - [JavaScript](https://08-login-form.netlify.app/login)
    - [TypeScript](https://08-login-form-typescript.netlify.app)
+- ## 09-pin-to-top
+    - [JavaScript](https://09-pin-to-top.netlify.app)
+    - [TypeScript](https://09-pin-to-top-typescript.netlify.app)
