@@ -13,7 +13,7 @@ interface cards {
 }
 interface dataInterface {
   data: cards[];
-  onClick: any;
+  onClick: (index: number) => void;
 }
 
 const CardList: FC<dataInterface> = (props) => {
