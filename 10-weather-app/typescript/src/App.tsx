@@ -7,7 +7,6 @@ import "./App.css";
 function App() {
   const [weatherData, setWeatherData] = useState<any>();
   const inputRef = useRef<string | any>();
-  console.log(inputRef);
 
   const key: string = "Your api key";
 
