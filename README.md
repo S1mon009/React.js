@@ -55,3 +55,6 @@
 - ## 09-pin-to-top
     - [JavaScript](https://09-pin-to-top.netlify.app)
     - [TypeScript](https://09-pin-to-top-typescript.netlify.app)
+- ## 10-weather-app
+    - [JavaScript](https://10-weather-app-javascript.netlify.app)
+    - [TypeScript](https://10-weather-app-typescript.netlify.app)
