@@ -1,0 +1,12 @@
+.links {
+  ul {
+    display: block;
+    list-style: none;
+    transform: translateY(9px);
+    li {
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+  }
+}
