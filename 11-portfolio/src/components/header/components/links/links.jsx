@@ -2,11 +2,11 @@ import { NavLink } from "react-router-dom";
 import { Button } from "@mui/material";
 import "./links.scss";
 
-const Links = ({ links, languageIndex, mode }) => {
+const Links = ({ links, mode }) => {
   return (
     <div className="links">
       <ul className="d-flex">
-        {links[languageIndex].map((link, index) => {
+        {links.map((link, index) => {
           return (
             <li key={index}>
               <NavLink

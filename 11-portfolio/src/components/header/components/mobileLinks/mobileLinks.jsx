@@ -11,7 +11,7 @@ import {
 import CloseIcon from "@mui/icons-material/Close";
 import "./mobileLinks.scss";
 
-const MobileLinks = ({ links, languageIndex, anchor, toggleDrawer, mode }) => {
+const MobileLinks = ({ links, anchor, toggleDrawer, mode }) => {
   return (
     <Box
       sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
@@ -27,11 +27,11 @@ const MobileLinks = ({ links, languageIndex, anchor, toggleDrawer, mode }) => {
         >
           <CloseIcon />
         </IconButton>
-        <List>{languageIndex === 0 ? "Links" : "Linki"}</List>
+        <List>Links</List>
         <Divider />
         <List>
           <div className={`mobile-links`}>
-            {links[languageIndex].map((link, index) => {
+            {links.map((link, index) => {
               return (
                 <NavLink
                   to={link.href}

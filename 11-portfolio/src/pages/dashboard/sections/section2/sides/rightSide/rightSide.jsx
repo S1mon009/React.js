@@ -1,18 +1,12 @@
-import { lazy, useEffect, useState } from "react";
-const SlideFromBottom = lazy(() =>
-  import(
-    "../../../../../../components/framerMotion/slideFromBottom/slideFromBottom"
-  )
-);
-const Paper = lazy(() => import("@mui/material/Paper"));
-const MonitorIcon = lazy(() => import("@mui/icons-material/Monitor"));
-const StorageIcon = lazy(() => import("@mui/icons-material/Storage"));
-const DashboardIcon = lazy(() => import("@mui/icons-material/Dashboard"));
-const ArrowForwardIcon = lazy(() => import("@mui/icons-material/ArrowForward"));
+import SlideFromBottom from "../../../../../../components/framerMotion/slideFromBottom/slideFromBottom";
+import { Paper } from "@mui/material";
+import MonitorIcon from "@mui/icons-material/Monitor";
+import StorageIcon from "@mui/icons-material/Storage";
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Link } from "react-router-dom";
 
 const RightSide = () => {
-  const [content, setContent] = useState();
   const categories = [
     {
       title: "Front-end",
@@ -27,42 +21,43 @@ const RightSide = () => {
       icon: <DashboardIcon color="primary" fontSize="large" />,
     },
   ];
+
   function setLocalActiveTypeDev(value) {
     localStorage.setItem("dev", value);
   }
-  useEffect(() => {
-    const temporaryContent = categories.map((category, index) => {
-      return (
-        <SlideFromBottom
-          once={true}
-          className="framer-motion-paper"
-          key={`${Date.now()}-${index}`}
-        >
-          <Paper
-            className="d-flex justify-content-between align-items-center p-4 paper"
-            elevation={3}
+
+  return (
+    <div className="right-side">
+      {categories.map((category, index) => {
+        return (
+          <SlideFromBottom
+            once={true}
+            className="framer-motion-paper"
             key={index}
           >
-            <div>
-              {category.icon}
-              <span>{category.title}</span>
-            </div>
-            <Link
-              to="portfolio"
-              onClick={setLocalActiveTypeDev.bind(null, category.title)}
+            <Paper
+              className="d-flex justify-content-between align-items-center p-4 paper"
+              elevation={3}
+              key={index}
             >
-              <div className="cursoir-pointer">
-                <ArrowForwardIcon color="primary" fontSize="large" />
+              <div>
+                {category.icon}
+                <span>{category.title}</span>
               </div>
-            </Link>
-          </Paper>
-        </SlideFromBottom>
-      );
-    });
-    setContent(temporaryContent);
-  }, []);
-
-  return <div className="right-side">{content}</div>;
+              <Link
+                to="portfolio"
+                onClick={setLocalActiveTypeDev.bind(null, category.title)}
+              >
+                <div className="cursoir-pointer">
+                  <ArrowForwardIcon color="primary" fontSize="large" />
+                </div>
+              </Link>
+            </Paper>
+          </SlideFromBottom>
+        );
+      })}
+    </div>
+  );
 };
 
 export default RightSide;

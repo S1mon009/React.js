@@ -1,7 +1,6 @@
-import { lazy } from "react";
 import { Box, List, Divider, TextField } from "@mui/material";
 
-const SearchModalBox = ({ languageIndex }) => {
+const SearchModalBox = () => {
   return (
     <Box
       component="form"
@@ -14,9 +13,7 @@ const SearchModalBox = ({ languageIndex }) => {
       <List>
         <TextField
           id="outlined-search"
-          label={
-            languageIndex === 0 ? "Search for projects" : "Szukaj projektów"
-          }
+          label={"Search for projects"}
           type="search"
           size="small"
           style={{ width: "95%" }}

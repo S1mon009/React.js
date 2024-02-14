@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import { Stack, Button, Tooltip, IconButton } from "@mui/material";
 import CustomModal from "../../../customModal/customModal";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -7,8 +8,10 @@ import SearchIcon from "@mui/icons-material/Search";
 import SearchModalBox from "../../../searchModalBox/searchModalBox";
 import "./rightMenu.scss";
 
-const RightMenu = ({ languageIndex, toggleDrawer, mode }) => {
+const RightMenu = ({ toggleDrawer, mode }) => {
   const [openModal, setOpenModal] = useState(false);
+  const github = useSelector((state) => state.content.github);
+
   const handleOpenModal = () => setOpenModal(true);
   useEffect(() => {
     const handleKeyPress = (event) => {
@@ -23,12 +26,12 @@ const RightMenu = ({ languageIndex, toggleDrawer, mode }) => {
     document.addEventListener("keydown", handleKeyPress);
 
     return () => document.removeEventListener("keypress", handleKeyPress);
-  });
+  }, []);
 
   return (
     <Stack direction="row" spacing={1}>
       <CustomModal open={openModal} setOpen={setOpenModal}>
-        <SearchModalBox languageIndex={languageIndex} />
+        <SearchModalBox />
       </CustomModal>
       <Button
         startIcon={<SearchIcon />}
@@ -38,10 +41,10 @@ const RightMenu = ({ languageIndex, toggleDrawer, mode }) => {
         color="primary"
         onClick={handleOpenModal}
       >
-        {languageIndex === 0 ? "Search..." : "Szukaj..."}
+        Search
         <div className="ctrlK">Ctrl+k</div>
       </Button>
-      <Tooltip title={languageIndex === 0 ? "Search" : "Szukaj"} arrow>
+      <Tooltip title={"Search"} arrow>
         <IconButton
           aria-label="search"
           color="primary"
@@ -51,25 +54,12 @@ const RightMenu = ({ languageIndex, toggleDrawer, mode }) => {
           <SearchIcon />
         </IconButton>
       </Tooltip>
-      <Tooltip
-        title={
-          languageIndex === 0 ? "GitHub repository" : "Repozytorium GitHub"
-        }
-        arrow
-      >
-        <IconButton
-          aria-label="github"
-          color="primary"
-          href="https://github.com/S1mon009"
-        >
+      <Tooltip title={"GitHub repository"} arrow>
+        <IconButton aria-label="github" color="primary" href={github}>
           <GitHubIcon />
         </IconButton>
       </Tooltip>
-      <Tooltip
-        title={languageIndex === 0 ? "Toggle settings drawer" : "Menu ustawień"}
-        placement="bottom-end"
-        arrow
-      >
+      <Tooltip title={"Toggle settings drawer"} placement="bottom-end" arrow>
         <IconButton
           aria-label="settings"
           color="primary"

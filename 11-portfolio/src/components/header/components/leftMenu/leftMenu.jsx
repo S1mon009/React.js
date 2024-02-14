@@ -3,14 +3,10 @@ import { Link } from "react-router-dom";
 import { Stack, Tooltip, IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 
-const LeftMenu = ({ languageIndex, toggleDrawer }) => {
+const LeftMenu = ({ toggleDrawer }) => {
   return (
     <Stack direction="row" spacing={1}>
-      <Tooltip
-        title={languageIndex === 0 ? "Toggle links drawer" : "Menu"}
-        placement="bottom-start"
-        arrow
-      >
+      <Tooltip title={"Menu"} placement="bottom-start" arrow>
         <IconButton
           aria-label="Links"
           color="primary"

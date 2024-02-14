@@ -1,0 +1,21 @@
+.section-1 {
+  .left-side {
+    width: 400px;
+    h1 {
+      font-size: 3.5rem;
+    }
+    button {
+      margin-top: 10px;
+    }
+  }
+}
+@media (max-width: 460px) {
+  .section-1 {
+    .left-side {
+      width: 95%;
+      h1 {
+        font-size: 2.4rem;
+      }
+    }
+  }
+}

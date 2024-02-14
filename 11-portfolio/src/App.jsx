@@ -1,13 +1,11 @@
-import { useMemo, useEffect, lazy } from "react";
+import { useMemo, useEffect } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-// const Header = lazy(() => import("./components/header/header"));
 import Dashboard from "./pages/dashboard/dashboard";
 import { useSelector, useDispatch } from "react-redux";
-import { languageActions, modeActions } from "./store/store";
+import { modeActions } from "./store/store";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "../node_modules/bootstrap-icons/font/bootstrap-icons.min.css";
 import "./App.scss";
 
 const router = createBrowserRouter([
@@ -58,19 +56,12 @@ function App() {
 
   useEffect(() => {
     const localMode = localStorage.getItem("mode");
-    const localLanguageIndex = localStorage.getItem("languageIndex");
 
     if (localMode) {
       dispatch(modeActions.setMode(localMode));
     } else if (!localMode) {
       localStorage.setItem("mode", "light");
       dispatch(modeActions.setMode("light"));
-    }
-    if (localLanguageIndex) {
-      dispatch(languageActions.setLanguage(localLanguageIndex));
-    } else if (!localLanguageIndex) {
-      localStorage.setItem("languageIndex", 0);
-      dispatch(languageActions.setLanguage(0));
     }
   }, []);
 

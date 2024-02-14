@@ -1,39 +1,26 @@
-import { lazy } from "react";
-const SlideFromBottom = lazy(() =>
-  import(
-    "../../../../../../components/framerMotion/slideFromBottom/slideFromBottom"
-  )
-);
+import { useSelector } from "react-redux";
+import SlideFromBottom from "../../../../../../components/framerMotion/slideFromBottom/slideFromBottom";
 
-const LeftSide = ({ contentLeft, languageIndex }) => {
-  const startYear = 2021;
+const LeftSide = ({ content }) => {
+  const startYear = useSelector((state) => state.content.startYear);
 
   return (
     <div className="left-side">
       <SlideFromBottom once={true}>
         <p className="title">
-          {contentLeft.paragraph1.part1[languageIndex]}
-          <span className="main-color">
-            {contentLeft.paragraph1.part2[languageIndex]}
-          </span>
-          {contentLeft.paragraph1.part3[languageIndex]}
+          {content.title.part1}
+          <span className="main-color">{content.title.part2}</span>
+          {content.title.part3}
         </p>
       </SlideFromBottom>
       <SlideFromBottom once={true}>
-        <p className="description">
-          {contentLeft.paragraph2.part1[languageIndex]}
-          <span className="main-color">
-            {contentLeft.paragraph2.part2[languageIndex]}
-          </span>
-          {contentLeft.paragraph2.part3[languageIndex]}
-        </p>
+        <p className="description">{content.description}</p>
       </SlideFromBottom>
-
       <div className="d-flex feautures">
         <SlideFromBottom once={true}>
           <div>
             <p className="main-color">52+</p>
-            <span>{contentLeft.paragraph3.part1[languageIndex]}</span>
+            <span>Projects</span>
           </div>
         </SlideFromBottom>
         <SlideFromBottom once={true}>
@@ -41,7 +28,7 @@ const LeftSide = ({ contentLeft, languageIndex }) => {
             <p className="main-color">
               {new Date().getFullYear() - startYear}+
             </p>
-            <span>{contentLeft.paragraph3.part2[languageIndex]}</span>
+            <span>Years of experience</span>
           </div>
         </SlideFromBottom>
       </div>
