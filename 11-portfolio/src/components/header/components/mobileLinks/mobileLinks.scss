@@ -1,0 +1,30 @@
+@import "../../../../colors";
+
+.close {
+  z-index: 2;
+}
+.mobile-links {
+  a {
+    text-decoration: none;
+    &.active {
+      &.dark {
+        color: $link-mobile-color-dark;
+        li {
+          background: $link-mobile-color-dark-active;
+        }
+      }
+      &.light {
+        color: $link-mobile-color-light;
+        li {
+          background: $link-mobile-color-light-active;
+        }
+      }
+    }
+    &.light {
+      color: $link-mobile-color-light;
+    }
+    &.dark {
+      color: $link-mobile-color-dark;
+    }
+  }
+}
