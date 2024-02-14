@@ -1,0 +1,28 @@
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+
+.login-container {
+  min-height: 50rem;
+  form {
+    width: clamp(250px, 450px, 550px);
+    margin: 15px;
+    padding: 15px;
+    border: 1px solid $gray-500;
+    border-radius: 10px;
+    button {
+      margin-bottom: 10px;
+    }
+  }
+  .logo {
+    top: 20px;
+    left: 20px;
+    width: 50px;
+  }
+  .page-image {
+    width: 50%;
+  }
+}
+@media (max-width: 700px) {
+  .page-image {
+    display: none;
+  }
+}
