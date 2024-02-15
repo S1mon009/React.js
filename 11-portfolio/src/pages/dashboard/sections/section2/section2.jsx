@@ -1,12 +1,31 @@
 import { useSelector } from "react-redux";
+import { createSelector } from "@reduxjs/toolkit";
 import { Box, Divider } from "@mui/material";
 import LeftSide from "./sides/leftSide/leftSide";
 import RightSide from "./sides/rightSide/rightSide";
 import "./section2.scss";
 
 const Section2 = () => {
-  const mode = useSelector((state) => state.mode.mode);
-  const content = useSelector((state) => state.content.dashboard.section2);
+  const { mode } = useSelector(
+    createSelector(
+      (mode) => {
+        return mode.mode;
+      },
+      (content) => {
+        return content;
+      }
+    )
+  );
+  const content = useSelector(
+    createSelector(
+      (mode) => {
+        return mode;
+      },
+      (content) => {
+        return content.content.dashboard.section2;
+      }
+    )
+  );
 
   return (
     <Box>

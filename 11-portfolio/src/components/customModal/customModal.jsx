@@ -1,7 +1,6 @@
-import { lazy } from "react";
-const Modal = lazy(() => import("@mui/material/Modal"));
+import { Modal } from "@mui/material";
 import { Box } from "@mui/material";
-import "./customModal.scss";
+import styles from "./customModal.module.scss";
 
 const style = {
   bgcolor: "background.paper",
@@ -15,7 +14,9 @@ const style = {
 };
 
 const CustomModal = ({ open, setOpen, children }) => {
-  const handleClose = () => setOpen(false);
+  function handleClose() {
+    setOpen(false);
+  }
 
   return (
     <div>
@@ -28,7 +29,7 @@ const CustomModal = ({ open, setOpen, children }) => {
       >
         <Box
           sx={style}
-          className="position-absolute top-50 start-50 translate-middle modal-box"
+          className={`position-absolute top-50 start-50 translate-middle ${styles["modal-box"]}`}
         >
           {children}
         </Box>

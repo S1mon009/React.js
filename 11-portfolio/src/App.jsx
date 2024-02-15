@@ -4,6 +4,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Dashboard from "./pages/dashboard/dashboard";
 import { useSelector, useDispatch } from "react-redux";
+import { createSelector } from "@reduxjs/toolkit";
 import { modeActions } from "./store/store";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./App.scss";
@@ -43,7 +44,16 @@ const router = createBrowserRouter([
 ]);
 function App() {
   const dispatch = useDispatch();
-  const mode = useSelector((state) => state.mode.mode);
+  const { mode } = useSelector(
+    createSelector(
+      (mode) => {
+        return mode.mode;
+      },
+      (content) => {
+        return content;
+      }
+    )
+  );
   const theme = useMemo(
     () =>
       createTheme({

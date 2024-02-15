@@ -56,14 +56,11 @@ header {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 840px) {
   header {
     .menu {
       display: flex;
       margin-right: 5px;
-    }
-    .links {
-      display: none;
     }
   }
 }

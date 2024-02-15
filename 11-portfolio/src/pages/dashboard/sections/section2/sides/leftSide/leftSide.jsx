@@ -1,8 +1,18 @@
 import { useSelector } from "react-redux";
+import { createSelector } from "@reduxjs/toolkit";
 import SlideFromBottom from "../../../../../../components/framerMotion/slideFromBottom/slideFromBottom";
 
 const LeftSide = ({ content }) => {
-  const startYear = useSelector((state) => state.content.startYear);
+  const startYear = useSelector(
+    createSelector(
+      (mode) => {
+        return mode;
+      },
+      (content) => {
+        return content.content.startYear;
+      }
+    )
+  );
 
   return (
     <div className="left-side">

@@ -1,7 +1,7 @@
 import { useState, memo } from "react";
 import { Outlet } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { createSelector } from "@reduxjs/toolkit";
 import { modeActions } from "../../store/store";
 import LeftMenu from "./components/leftMenu/leftMenu";
 import Links from "./components/links/links";
@@ -17,8 +17,26 @@ const Header = memo(() => {
     right: false,
   });
   const dispatch = useDispatch();
-  const links = useSelector((state) => state.content.links);
-  const mode = useSelector((state) => state.mode.mode);
+  const { mode } = useSelector(
+    createSelector(
+      (mode) => {
+        return mode.mode;
+      },
+      (content) => {
+        return content;
+      }
+    )
+  );
+  const links = useSelector(
+    createSelector(
+      (mode) => {
+        return mode;
+      },
+      (content) => {
+        return content.content.links;
+      }
+    )
+  );
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (

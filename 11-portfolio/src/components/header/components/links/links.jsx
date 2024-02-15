@@ -1,10 +1,10 @@
 import { NavLink } from "react-router-dom";
 import { Button } from "@mui/material";
-import "./links.scss";
+import styles from "./links.module.scss";
 
 const Links = ({ links, mode }) => {
   return (
-    <div className="links">
+    <div className={styles.links}>
       <ul className="d-flex">
         {links.map((link, index) => {
           return (

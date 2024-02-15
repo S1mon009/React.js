@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
+import { createSelector } from "@reduxjs/toolkit";
 import { Stack, Button, Tooltip, IconButton } from "@mui/material";
 import CustomModal from "../../../customModal/customModal";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -10,7 +11,16 @@ import "./rightMenu.scss";
 
 const RightMenu = ({ toggleDrawer, mode }) => {
   const [openModal, setOpenModal] = useState(false);
-  const github = useSelector((state) => state.content.github);
+  const github = useSelector(
+    createSelector(
+      (mode) => {
+        return mode;
+      },
+      (content) => {
+        return content.content.github;
+      }
+    )
+  );
 
   const handleOpenModal = () => setOpenModal(true);
   useEffect(() => {
