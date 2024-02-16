@@ -1,8 +1,14 @@
 @import "../../../../colors";
 
+.search-icon {
+  &.dark,
+  &.light {
+    display: none;
+  }
+}
 .search {
-  display: flex;
   &.dark {
+    display: flex;
     background: $search-background-color-dark;
     border: 1px solid $search-border-color-dark;
     &:hover {
@@ -19,6 +25,7 @@
     }
   }
   &.light {
+    display: flex;
     background: $search-background-color-light;
     border: 1px solid $search-border-color-light;
     &:hover {
@@ -35,15 +42,18 @@
     }
   }
 }
-.search-icon {
-  display: none;
-}
 
-@media (max-width: 800px) {
+@media (max-width: 840px) {
   .search {
-    display: none;
+    &.dark,
+    &.light {
+      display: none;
+    }
   }
   .search-icon {
-    display: flex;
+    &.dark,
+    &.light {
+      display: flex;
+    }
   }
 }

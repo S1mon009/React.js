@@ -10,6 +10,7 @@ import SearchModalBox from "../../../searchModalBox/searchModalBox";
 import styles from "./rightMenu.module.scss";
 
 const RightMenu = ({ toggleDrawer, mode }) => {
+  console.log(styles);
   const [openModal, setOpenModal] = useState(false);
   const github = useSelector(
     createSelector(
@@ -60,7 +61,9 @@ const RightMenu = ({ toggleDrawer, mode }) => {
         <IconButton
           aria-label="search"
           color="primary"
-          className={styles["search-icon"]}
+          className={`${styles["search-icon"]} ${
+            mode === "dark" ? styles.dark : styles.light
+          }`}
           onClick={handleOpenModal}
         >
           <SearchIcon />

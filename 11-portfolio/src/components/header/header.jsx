@@ -9,7 +9,8 @@ import RightMenu from "./components/rightMenu/rightMenu";
 import CustomDrawer from "./components/customDrawer/customDrawer";
 import MobileLinks from "./components/mobileLinks/mobileLinks";
 import Settings from "./components/settings/settings";
-import "./header.scss";
+import styles from "./header.module.scss";
+// import "./header.scss";
 
 const Header = memo(() => {
   const [state, setState] = useState({
@@ -59,7 +60,9 @@ const Header = memo(() => {
   return (
     <>
       <header
-        className={`position-fixed w-100 d-flex justify-content-between align-items-center p-3 ${mode}`}
+        className={`position-fixed w-100 d-flex justify-content-between align-items-center p-3 ${
+          mode === "dark" ? styles.dark : styles.light
+        }`}
       >
         <LeftMenu toggleDrawer={toggleDrawer("left", true)} />
         <Links links={links} mode={mode} />
