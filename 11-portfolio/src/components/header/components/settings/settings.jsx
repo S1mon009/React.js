@@ -7,7 +7,7 @@ import {
   IconButton,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import "./settings.scss";
+import styles from "./settings.module.scss";
 
 const Settings = ({ anchor, toggleDrawer, mode, changeMode }) => {
   return (
@@ -20,7 +20,7 @@ const Settings = ({ anchor, toggleDrawer, mode, changeMode }) => {
         <IconButton
           aria-label="close"
           color="primary"
-          className="position-absolute top-0 end-0 close"
+          className={`position-absolute top-0 end-0 ${styles.close}`}
           onClick={toggleDrawer}
         >
           <CloseIcon />
@@ -29,7 +29,7 @@ const Settings = ({ anchor, toggleDrawer, mode, changeMode }) => {
         <Divider />
         <List>
           <div>
-            <span className="d-block setting-title">MODE</span>
+            <span className={`d-block ${styles["setting-title"]}`}>MODE</span>
             <ToggleButtonGroup
               color="primary"
               value={mode}

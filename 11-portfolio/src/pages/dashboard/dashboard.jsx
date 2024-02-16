@@ -1,9 +1,8 @@
 import { lazy, Suspense, memo } from "react";
 import CircularProgress from "@mui/material/CircularProgress";
-
 const Section1 = lazy(() => import("./sections/section1/section1"));
 const Section2 = lazy(() => import("./sections/section2/section2"));
-import "./dashboard.scss";
+const Section3 = lazy(() => import("./sections/section3/section3"));
 
 const Dashboard = memo(() => {
   return (
@@ -15,6 +14,7 @@ const Dashboard = memo(() => {
       >
         <Section1 />
         <Section2 />
+        <Section3 />
       </Suspense>
     </main>
   );

@@ -1,0 +1,21 @@
+.right-side {
+  width: 350px;
+  .framer-motion-paper {
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
+    span {
+      margin-left: 20px;
+      font-size: 1.1rem;
+    }
+    .cursoir-pointer {
+      cursor: pointer;
+    }
+  }
+}
+@media (max-width: 994px) {
+  .right-side {
+    width: 550px;
+    margin-top: 30px;
+  }
+}

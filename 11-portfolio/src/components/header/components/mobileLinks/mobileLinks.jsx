@@ -9,7 +9,7 @@ import {
   IconButton,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import "./mobileLinks.scss";
+import styles from "./mobileLinks.module.scss";
 
 const MobileLinks = ({ links, anchor, toggleDrawer, mode }) => {
   return (
@@ -22,7 +22,7 @@ const MobileLinks = ({ links, anchor, toggleDrawer, mode }) => {
         <IconButton
           aria-label="close"
           color="primary"
-          className="position-absolute top-0 end-0 close"
+          className={`position-absolute top-0 end-0 ${styles.close}`}
           onClick={toggleDrawer}
         >
           <CloseIcon />
@@ -30,13 +30,19 @@ const MobileLinks = ({ links, anchor, toggleDrawer, mode }) => {
         <List>Links</List>
         <Divider />
         <List>
-          <div className={`mobile-links`}>
+          <div className={styles["mobile-links"]}>
             {links.map((link, index) => {
               return (
                 <NavLink
                   to={link.href}
                   className={({ isActive }) =>
-                    isActive ? `active ${mode}` : mode
+                    isActive
+                      ? `${styles.active} ${
+                          mode === "dark" ? styles.dark : styles.light
+                        }`
+                      : mode === "dark"
+                      ? styles.dark
+                      : styles.light
                   }
                   key={index}
                 >

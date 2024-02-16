@@ -1,0 +1,13 @@
+.left-side {
+  width: 500px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  .technology-card {
+    height: 150px;
+    aspect-ratio: 1/1;
+    img {
+      height: 60%;
+    }
+  }
+}

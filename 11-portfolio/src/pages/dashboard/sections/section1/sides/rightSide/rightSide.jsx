@@ -1,9 +1,9 @@
 import SplineCube from "../../../../../../components/splineObjects/cube/splineCube";
-import "./rightSide.scss";
+import styles from "./rightSide.module.scss";
 
 const RightSide = () => {
   return (
-    <div className="right-side">
+    <div className={styles["right-side"]}>
       <SplineCube />
     </div>
   );

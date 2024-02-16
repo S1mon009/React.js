@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { createSelector } from "@reduxjs/toolkit";
 import SlideFromBottom from "../../../../../../components/framerMotion/slideFromBottom/slideFromBottom";
+import styles from "./leftSide.module.scss";
 
 const LeftSide = ({ content }) => {
   const startYear = useSelector(
@@ -15,27 +16,27 @@ const LeftSide = ({ content }) => {
   );
 
   return (
-    <div className="left-side">
+    <div className={styles["left-side"]}>
       <SlideFromBottom once={true}>
-        <p className="title">
+        <p className={styles.title}>
           {content.title.part1}
-          <span className="main-color">{content.title.part2}</span>
+          <span className={styles["main-color"]}>{content.title.part2}</span>
           {content.title.part3}
         </p>
       </SlideFromBottom>
       <SlideFromBottom once={true}>
-        <p className="description">{content.description}</p>
+        <p className={styles.description}>{content.description}</p>
       </SlideFromBottom>
-      <div className="d-flex feautures">
+      <div className={`d-flex ${styles.feautures}`}>
         <SlideFromBottom once={true}>
           <div>
-            <p className="main-color">52+</p>
+            <p className={styles["main-color"]}>52+</p>
             <span>Projects</span>
           </div>
         </SlideFromBottom>
         <SlideFromBottom once={true}>
           <div>
-            <p className="main-color">
+            <p className={styles["main-color"]}>
               {new Date().getFullYear() - startYear}+
             </p>
             <span>Years of experience</span>

@@ -3,26 +3,16 @@ import { createSelector } from "@reduxjs/toolkit";
 import { Box, Divider } from "@mui/material";
 import LeftSide from "./sides/leftSide/leftSide";
 import RightSide from "./sides/rightSide/rightSide";
-import styles from "./section2.module.scss";
+import styles from "./section3.module.scss";
 
-const Section2 = () => {
-  const { mode } = useSelector(
-    createSelector(
-      (mode) => {
-        return mode.mode;
-      },
-      (content) => {
-        return content;
-      }
-    )
-  );
+const Section3 = () => {
   const content = useSelector(
     createSelector(
       (mode) => {
         return mode;
       },
       (content) => {
-        return content.content.dashboard.section2;
+        return content.content.dashboard.section3;
       }
     )
   );
@@ -30,16 +20,14 @@ const Section2 = () => {
   return (
     <Box>
       <section
-        className={`d-flex justify-content-around flex-wrap ${
-          styles["section-2"]
-        } ${mode === "dark" ? styles.dark : styles.light}`}
+        className={`d-flex justify-content-around flex-wrap-reverse ${styles["section-3"]}`}
       >
         <LeftSide content={content} />
-        <RightSide />
+        <RightSide content={content} />
       </section>
       <Divider style={{ background: "gray" }} />
     </Box>
   );
 };
 
-export default Section2;
+export default Section3;

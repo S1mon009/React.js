@@ -27,6 +27,37 @@ const contentSlice = createSlice({
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, mollitia eveniet optio tenetur eligendi facilis illo omnis praesentium! Voluptatibus repudiandae molestiae consequuntur quidem, minus quis nostrum ducimus quam sint quasi.",
       },
+      section3: {
+        title: {
+          part1: "Most ",
+          part2: "used",
+          part3: " technologies",
+        },
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, mollitia eveniet optio tenetur eligendi facilis illo omnis praesentium! Voluptatibus repudiandae molestiae consequuntur quidem, minus quis nostrum ducimus quam sint quasi.",
+        mostUsedTechnologies: [
+          {
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+            name: "React.js",
+          },
+          {
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+            name: "JavaScript",
+          },
+          {
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+            name: "TypeScript",
+          },
+          {
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg",
+            name: "Bootstrap",
+          },
+          {
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg",
+            name: "Sass",
+          },
+        ],
+      },
     },
   },
 });

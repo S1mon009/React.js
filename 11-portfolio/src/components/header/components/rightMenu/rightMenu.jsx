@@ -7,7 +7,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import SearchModalBox from "../../../searchModalBox/searchModalBox";
-import "./rightMenu.scss";
+import styles from "./rightMenu.module.scss";
 
 const RightMenu = ({ toggleDrawer, mode }) => {
   const [openModal, setOpenModal] = useState(false);
@@ -46,19 +46,21 @@ const RightMenu = ({ toggleDrawer, mode }) => {
       <Button
         startIcon={<SearchIcon />}
         aria-labelledby="app-search-label"
-        className={`search ${mode}`}
+        className={`${styles.search} ${
+          mode === "dark" ? styles.dark : styles.light
+        }`}
         variant="filledTonal"
         color="primary"
         onClick={handleOpenModal}
       >
         Search
-        <div className="ctrlK">Ctrl+k</div>
+        <div className={styles.ctrlK}>Ctrl+k</div>
       </Button>
       <Tooltip title={"Search"} arrow>
         <IconButton
           aria-label="search"
           color="primary"
-          className="search-icon"
+          className={styles["search-icon"]}
           onClick={handleOpenModal}
         >
           <SearchIcon />

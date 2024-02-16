@@ -1,0 +1,49 @@
+@import "../../../../colors";
+
+.search {
+  display: flex;
+  &.dark {
+    background: $search-background-color-dark;
+    border: 1px solid $search-border-color-dark;
+    &:hover {
+      background: $search-background-color-dark;
+    }
+    .ctrlK {
+      padding: 2px 3px;
+      font-size: 10px;
+      font-weight: 800;
+      margin-left: 10px;
+      border: 1px solid $search-border-color-dark;
+      border-radius: 4px;
+      background: $search-background-color-dark;
+    }
+  }
+  &.light {
+    background: $search-background-color-light;
+    border: 1px solid $search-border-color-light;
+    &:hover {
+      background: $search-background-color-light;
+    }
+    .ctrlK {
+      padding: 2px 3px;
+      font-size: 10px;
+      font-weight: 800;
+      margin-left: 10px;
+      border: 1px solid $search-border-color-light;
+      border-radius: 4px;
+      background: $search-icon-background-color;
+    }
+  }
+}
+.search-icon {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .search {
+    display: none;
+  }
+  .search-icon {
+    display: flex;
+  }
+}
