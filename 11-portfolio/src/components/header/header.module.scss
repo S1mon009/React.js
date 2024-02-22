@@ -1,18 +1,15 @@
 @import "../../colors";
 
 header {
-  height: 70px;
+  height: 4.375rem;
   z-index: 1;
   &.light {
     background: $header-background-color-light;
-    border-bottom: 1px solid $border-bottom-light;
+    border-bottom: 0.0625rem solid $border-bottom-light;
   }
   &.dark {
     background: $header-background-color-dark;
-    border-bottom: 1px solid $border-bottom-dark;
-  }
-  .menu {
-    display: none;
+    border-bottom: 0.0625rem solid $border-bottom-dark;
   }
   a {
     &.light {
@@ -26,16 +23,7 @@ header {
       }
     }
     img {
-      height: 35px;
-    }
-  }
-}
-
-@media (max-width: 840px) {
-  header {
-    .menu {
-      display: flex;
-      margin-right: 5px;
+      height: 2.1875rem;
     }
   }
 }

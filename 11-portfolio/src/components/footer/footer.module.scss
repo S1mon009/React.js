@@ -1,0 +1,36 @@
+@import "../../colors";
+
+footer {
+  padding: 2rem 0 4rem 0;
+  ul {
+    width: 10rem;
+    margin-right: 2rem;
+    list-style: none;
+    li {
+      transform: translateX(-2rem);
+      &:not(:first-child) {
+        margin-top: 1rem;
+      }
+      a {
+        &.light {
+          button {
+            background: $link-background-color-light;
+          }
+        }
+        &.dark {
+          button {
+            background: $link-background-color-dark;
+          }
+        }
+      }
+    }
+  }
+  .publics {
+    margin-left: 3.5rem;
+    button {
+      &:not(:first-child) {
+        margin-left: 1rem;
+      }
+    }
+  }
+}

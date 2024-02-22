@@ -7,10 +7,9 @@ const LeftSide = ({ content }) => {
     <div className={styles["left-side"]}>
       {content.mostUsedTechnologies.map((technology, index) => {
         return (
-          <SlideFromBottom once={true}>
+          <SlideFromBottom once={true} key={index}>
             <Paper
               elevation={3}
-              key={`${Date.now()}-${index}`}
               className={`d-flex justify-content-center align-items-center ${styles["technology-card"]}`}
             >
               <img loading="lazy" src={technology.icon} alt={technology.name} />

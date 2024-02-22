@@ -1,11 +1,11 @@
 .right-side {
-  width: 350px;
+  width: 21.875rem;
   .framer-motion-paper {
     &:not(:first-child) {
-      margin-top: 20px;
+      margin-top: 1.25rem;
     }
     span {
-      margin-left: 20px;
+      margin-left: 1.25rem;
       font-size: 1.1rem;
     }
     .cursoir-pointer {
@@ -13,9 +13,9 @@
     }
   }
 }
-@media (max-width: 994px) {
+@media (max-width: 62.125rem) {
   .right-side {
-    width: 550px;
-    margin-top: 30px;
+    width: 34.375rem;
+    margin-top: 1.875rem;
   }
 }

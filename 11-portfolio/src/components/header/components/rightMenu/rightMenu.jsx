@@ -10,7 +10,6 @@ import SearchModalBox from "../../../searchModalBox/searchModalBox";
 import styles from "./rightMenu.module.scss";
 
 const RightMenu = ({ toggleDrawer, mode }) => {
-  console.log(styles);
   const [openModal, setOpenModal] = useState(false);
   const github = useSelector(
     createSelector(

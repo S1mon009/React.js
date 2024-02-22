@@ -2,15 +2,15 @@
   ul {
     display: block;
     list-style: none;
-    transform: translateY(9px);
+    transform: translateY(0.5625rem);
     li {
       &:not(:last-child) {
-        margin-right: 10px;
+        margin-right: 0.625rem;
       }
     }
   }
 }
-@media (max-width: 840px) {
+@media (max-width: 52.5rem) {
   .links {
     display: none;
   }

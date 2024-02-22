@@ -65,7 +65,10 @@ const Header = memo(() => {
         }`}
       >
         <LeftMenu toggleDrawer={toggleDrawer("left", true)} />
-        <Links links={links} mode={mode} />
+        <Links
+          links={links}
+          mode={mode === "dark" ? styles.dark : styles.light}
+        />
         <RightMenu toggleDrawer={toggleDrawer("right", true)} mode={mode} />
         <CustomDrawer
           anchor={"left"}
