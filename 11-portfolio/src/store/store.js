@@ -1,4 +1,5 @@
 import { createSlice, configureStore } from "@reduxjs/toolkit";
+import Logo from "../assets/logo-blue.svg";
 
 const contentSlice = createSlice({
   name: "content",
@@ -10,6 +11,7 @@ const contentSlice = createSlice({
       { text: "Contact", href: "contact" },
     ],
     startYear: 2021,
+    logo: Logo,
     github: "https://github.com/S1mon009",
     dashboard: {
       section1: {
@@ -57,6 +59,39 @@ const contentSlice = createSlice({
             name: "Sass",
           },
         ],
+      },
+    },
+    footer: {
+      poweredBy: [
+        {
+          image:
+            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/materialui/materialui-original.svg",
+          alt: "Material UI",
+        },
+        {
+          image:
+            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+          alt: "React.js",
+        },
+        {
+          image:
+            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+          alt: "JavaScript",
+        },
+        {
+          image:
+            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg",
+          alt: "Bootstrap",
+        },
+        {
+          image:
+            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg",
+          alt: "Sass",
+        },
+      ],
+      contactInfo: {
+        projectTitle: "Portfolio",
+        contactMethods: ["Phone: +000000000", "Email: s1mon009lab@gmail.com"],
       },
     },
   },

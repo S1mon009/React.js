@@ -2,35 +2,14 @@
 
 footer {
   padding: 2rem 0 4rem 0;
-  ul {
-    width: 10rem;
-    margin-right: 2rem;
-    list-style: none;
-    li {
-      transform: translateX(-2rem);
-      &:not(:first-child) {
-        margin-top: 1rem;
-      }
-      a {
-        &.light {
-          button {
-            background: $link-background-color-light;
-          }
-        }
-        &.dark {
-          button {
-            background: $link-background-color-dark;
-          }
-        }
-      }
-    }
+}
+@media (max-width: 991px) {
+  .divider:nth-child(4) {
+    display: none;
   }
-  .publics {
-    margin-left: 3.5rem;
-    button {
-      &:not(:first-child) {
-        margin-left: 1rem;
-      }
-    }
+}
+@media (max-width: 671px) {
+  .divider:nth-child(2) {
+    display: none;
   }
 }

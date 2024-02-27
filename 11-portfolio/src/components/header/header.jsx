@@ -10,7 +10,6 @@ import CustomDrawer from "./components/customDrawer/customDrawer";
 import MobileLinks from "./components/mobileLinks/mobileLinks";
 import Settings from "./components/settings/settings";
 import styles from "./header.module.scss";
-// import "./header.scss";
 
 const Header = memo(() => {
   const [state, setState] = useState({
@@ -18,6 +17,16 @@ const Header = memo(() => {
     right: false,
   });
   const dispatch = useDispatch();
+  const logo = useSelector(
+    createSelector(
+      (mode) => {
+        return mode;
+      },
+      (content) => {
+        return content.content.logo;
+      }
+    )
+  );
   const { mode } = useSelector(
     createSelector(
       (mode) => {
@@ -64,7 +73,7 @@ const Header = memo(() => {
           mode === "dark" ? styles.dark : styles.light
         }`}
       >
-        <LeftMenu toggleDrawer={toggleDrawer("left", true)} />
+        <LeftMenu toggleDrawer={toggleDrawer("left", true)} logo={logo} />
         <Links
           links={links}
           mode={mode === "dark" ? styles.dark : styles.light}

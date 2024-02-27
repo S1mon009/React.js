@@ -1,11 +1,13 @@
 import { memo } from "react";
-import { Box, Divider, Button, Tooltip, IconButton } from "@mui/material";
-import { NavLink } from "react-router-dom";
+import { Box, Divider } from "@mui/material";
 import { useSelector } from "react-redux";
 import { createSelector } from "@reduxjs/toolkit";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import Links from "./components/links/links";
+import Publics from "./components/publics/publics";
+import ContactInfo from "./components/contactInfo/contactInfo";
 import styles from "./footer.module.scss";
 
 const Footer = memo(() => {
@@ -39,63 +41,60 @@ const Footer = memo(() => {
       }
     )
   );
+  const poweredBy = useSelector(
+    createSelector(
+      (mode) => {
+        return mode;
+      },
+      (content) => {
+        return content.content.footer.poweredBy;
+      }
+    )
+  );
   const publicsProfile = [
     { icon: <GitHubIcon />, name: "GitHub", href: github },
     { icon: <LinkedInIcon />, name: "LinkedIn" },
     { icon: <InstagramIcon />, name: "Instagram" },
   ];
+  const logo = useSelector(
+    createSelector(
+      (mode) => {
+        return mode;
+      },
+      (content) => {
+        return content.content.logo;
+      }
+    )
+  );
+  const contactInfo = useSelector(
+    createSelector(
+      (mode) => {
+        return mode;
+      },
+      (content) => {
+        return content.content.footer.contactInfo;
+      }
+    )
+  );
 
   return (
     <footer>
-      <Box className="d-flex justify-content-start flex-wrap">
-        <div>
-          <ul>
-            {links.map((link, index) => {
-              return (
-                <li key={index}>
-                  <NavLink
-                    to={link.href}
-                    className={({ isActive }) =>
-                      isActive
-                        ? mode === "dark"
-                          ? styles.dark
-                          : styles.light
-                        : undefined
-                    }
-                  >
-                    <Button className="w-100">{link.text}</Button>
-                  </NavLink>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+      <Box className="d-flex column-gap-5 row-gap-4 justify-content-start flex-wrap">
+        <Links links={links} mode={mode} />
         <Divider
           orientation="vertical"
           flexItem
           style={{ background: "gray" }}
+          className={styles.divider}
         />
-        <div className={styles.publics}>
-          <p className="fs-5 fw-medium">Publics</p>
-          <div>
-            {publicsProfile.map((publicProfile, index) => {
-              return (
-                <IconButton
-                  aria-label={publicProfile.name}
-                  color="primary"
-                  size="large"
-                  href={publicProfile?.href}
-                  key={index}
-                >
-                  {publicProfile.icon}
-                </IconButton>
-              );
-            })}
-          </div>
-          <div>
-            <p className="fs-5 fw-medium">Powered by</p>
-          </div>
-        </div>
+        <Publics publicsProfile={publicsProfile} poweredBy={poweredBy} />
+        <Divider
+          orientation="vertical"
+          flexItem
+          style={{ background: "gray" }}
+          className={styles.divider}
+        />
+        <ContactInfo logo={logo} contactInfo={contactInfo} />
       </Box>
     </footer>
   );

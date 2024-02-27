@@ -1,0 +1,40 @@
+@import "../../../../colors";
+
+footer {
+  ul {
+    width: 10rem;
+    list-style: none;
+    li {
+      transform: translateX(-2rem);
+      &:not(:first-child) {
+        margin-top: 1rem;
+      }
+      a {
+        &.light {
+          button {
+            background: $link-background-color-light;
+          }
+        }
+        &.dark {
+          button {
+            background: $link-background-color-dark;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 622px) {
+  footer {
+    .links-container {
+      width: 100%;
+      transform: translateX(15px);
+      ul {
+        width: 100%;
+        li {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
