@@ -7,7 +7,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import Links from "./components/links/links";
 import Publics from "./components/publics/publics";
-import ContactInfo from "./components/contactInfo/contactInfo";
+import DevCard from "./components/devCard/devCard";
 import styles from "./footer.module.scss";
 
 const Footer = memo(() => {
@@ -56,23 +56,13 @@ const Footer = memo(() => {
     { icon: <LinkedInIcon />, name: "LinkedIn" },
     { icon: <InstagramIcon />, name: "Instagram" },
   ];
-  const logo = useSelector(
+  const devCard = useSelector(
     createSelector(
       (mode) => {
         return mode;
       },
       (content) => {
-        return content.content.logo;
-      }
-    )
-  );
-  const contactInfo = useSelector(
-    createSelector(
-      (mode) => {
-        return mode;
-      },
-      (content) => {
-        return content.content.footer.contactInfo;
+        return content.content.devCard;
       }
     )
   );
@@ -94,7 +84,7 @@ const Footer = memo(() => {
           style={{ background: "gray" }}
           className={styles.divider}
         />
-        <ContactInfo logo={logo} contactInfo={contactInfo} />
+        <DevCard devCard={devCard} />
       </Box>
     </footer>
   );

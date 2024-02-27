@@ -8,7 +8,11 @@ const Footer = lazy(() => import("../../components/footer/footer"));
 const Dashboard = memo(() => {
   return (
     <main>
-      <Suspense fallback={<CircularProgress />}>
+      <Suspense
+        fallback={
+          <CircularProgress className="position-absolute top-50 start-50 translate-middle" />
+        }
+      >
         <Section1 />
         <Section2 />
         <Section3 />

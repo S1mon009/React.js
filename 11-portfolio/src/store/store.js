@@ -13,6 +13,10 @@ const contentSlice = createSlice({
     startYear: 2021,
     logo: Logo,
     github: "https://github.com/S1mon009",
+    devCard: {
+      src: "https://api.daily.dev/devcards/v2/QbIZWZ9QjwEON8mzmbenI.png?type=wide&r=1pc",
+      alt: "Szymon Skałecki's Dev Card",
+    },
     dashboard: {
       section1: {
         firstH1: "I am",
@@ -89,10 +93,6 @@ const contentSlice = createSlice({
           alt: "Sass",
         },
       ],
-      contactInfo: {
-        projectTitle: "Portfolio",
-        contactMethods: ["Phone: +000000000", "Email: s1mon009lab@gmail.com"],
-      },
     },
   },
 });

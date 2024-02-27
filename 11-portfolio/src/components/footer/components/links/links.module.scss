@@ -24,11 +24,11 @@ footer {
     }
   }
 }
-@media (max-width: 622px) {
+@media (max-width: 38.875rem) {
   footer {
     .links-container {
       width: 100%;
-      transform: translateX(15px);
+      transform: translateX(0.9375rem);
       ul {
         width: 100%;
         li {
