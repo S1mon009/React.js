@@ -1,0 +1,29 @@
+@import "../../colors";
+
+header {
+  height: 4.375rem;
+  z-index: 1;
+  &.light {
+    background: $header-background-color-light;
+    border-bottom: 0.0625rem solid $border-bottom-light;
+  }
+  &.dark {
+    background: $header-background-color-dark;
+    border-bottom: 0.0625rem solid $border-bottom-dark;
+  }
+  a {
+    &.light {
+      button {
+        background: $link-background-color-light;
+      }
+    }
+    &.dark {
+      button {
+        background: $link-background-color-dark;
+      }
+    }
+    img {
+      height: 2.1875rem;
+    }
+  }
+}

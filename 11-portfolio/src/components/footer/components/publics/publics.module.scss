@@ -1,0 +1,21 @@
+footer {
+  .publics {
+    a {
+      transform: translateY(-0.625rem);
+    }
+    button {
+      transform: translateY(-0.625rem);
+      &:not(:first-child) {
+        margin-left: 1rem;
+      }
+    }
+    .powered-by {
+      img {
+        width: 3.75rem;
+        &:not(:last-child) {
+          margin-right: 0.625rem;
+        }
+      }
+    }
+  }
+}

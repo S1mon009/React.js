@@ -1,0 +1,25 @@
+@import "../../../../../../colors";
+
+.right-side {
+  width: 31.25rem;
+  .title {
+    font-size: 2.5rem;
+    font-weight: 800;
+  }
+  .description {
+    font-size: 1.3rem;
+  }
+  .main-color {
+    color: $main-color;
+  }
+}
+@media (max-width: 68.375rem) {
+  .right-side {
+    width: 25rem;
+  }
+}
+@media (max-width: 62.125rem) {
+  .right-side {
+    width: 34.375rem;
+  }
+}

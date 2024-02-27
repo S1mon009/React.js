@@ -1,0 +1,12 @@
+{
+  "short_name": "Aplikacja-to-do",
+  "name": "Aplikacja-to-do javascript",
+  "icons": [
+    {
+      "src": "logo.svg",
+      "type": "image/svg"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone"
+}

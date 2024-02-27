@@ -1,0 +1,9 @@
+.menu {
+  display: none;
+}
+@media (max-width: 52.5rem) {
+  .menu {
+    display: flex;
+    margin-right: 0.3125rem;
+  }
+}

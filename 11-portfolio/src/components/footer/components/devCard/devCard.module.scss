@@ -1,0 +1,11 @@
+footer {
+  .dev-img {
+    width: 37.5rem;
+    a {
+      img {
+        width: 100%;
+        filter: drop-shadow(0 0.5rem 1rem rgba(0, 0, 0, 0.15));
+      }
+    }
+  }
+}

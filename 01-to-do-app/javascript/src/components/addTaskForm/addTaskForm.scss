@@ -1,0 +1,77 @@
+@import "../colors";
+
+form {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(200px, 80%, 400px);
+  padding: 80px 20px 20px 20px;
+  color: $text-color;
+  background: $background-color;
+  border-radius: 10px;
+  -webkit-box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.25);
+  .form-title {
+    position: absolute;
+    font-size: 25px;
+    font-weight: 600;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .form-item {
+    position: relative;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    input {
+      height: 50px;
+      width: 100%;
+      padding: 0 15px;
+      background: $background-color;
+      color: $text-color;
+      border: 3px solid $text-color;
+      border-radius: 10px;
+      outline: none;
+      cursor: text;
+    }
+    input[type="date"] {
+      color-scheme: dark;
+    }
+    label {
+      position: absolute;
+      margin-left: 15px;
+      font-size: 17px;
+      transform: translatey(-20px);
+      padding: 0 10px;
+      background: $background-color;
+      transition: 0.3s all;
+      cursor: text;
+    }
+    input:focus + label {
+      color: $focus-color;
+    }
+    input:focus {
+      border: 3px solid $focus-color;
+      transition: 0.3s all;
+    }
+  }
+  button {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  button:disabled {
+    cursor: default;
+  }
+}
