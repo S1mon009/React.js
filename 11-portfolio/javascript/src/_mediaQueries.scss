@@ -1,0 +1,13 @@
+@mixin mediaQuery($maxOrMinBreakpoint, $breakpointInRem) {
+  $outputClass: "";
+  @if $maxOrMinBreakpoint== "max" {
+    @media (max-width: $breakpointInRem) {
+      @content;
+    }
+  }
+  @if $maxOrMinBreakpoint== "min" {
+    @media (min-width: $breakpointInRem) {
+      @content;
+    }
+  }
+}

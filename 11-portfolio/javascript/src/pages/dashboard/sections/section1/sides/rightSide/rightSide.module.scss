@@ -1,0 +1,7 @@
+@import "../../../../../../mediaQueries";
+
+@include mediaQuery("max", 67.1875rem) {
+  .right-side {
+    display: none;
+  }
+}
