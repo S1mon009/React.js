@@ -1,0 +1,19 @@
+@import "../../../../mediaQueries";
+
+.links {
+  ul {
+    display: block;
+    list-style: none;
+    transform: translateY(0.5625rem);
+    li {
+      &:not(:last-child) {
+        margin-right: 0.625rem;
+      }
+    }
+  }
+}
+@include mediaQuery("max", 52.5rem) {
+  .links {
+    display: none;
+  }
+}

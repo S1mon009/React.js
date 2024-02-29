@@ -1,0 +1,23 @@
+@import "../../../../../../commonClassed";
+@import "../../../../../../mediaQueries";
+
+.left-side {
+  width: 25rem;
+  h1 {
+    font-size: 3.5rem;
+    &:nth-child(2) {
+      font-weight: 800;
+    }
+  }
+  button {
+    margin-top: 0.625rem;
+  }
+}
+@include mediaQuery("max", 28.75rem) {
+  .left-side {
+    width: 95%;
+    h1 {
+      font-size: 2.4rem;
+    }
+  }
+}
