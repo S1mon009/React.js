@@ -1,10 +1,10 @@
 import Spline from "@splinetool/react-spline";
 
-const SplineCube = () => {
+const SplineCube = ({ image }) => {
   return (
     <div>
       <Spline
-        scene="https://prod.spline.design/XFvUA1JiKwHfUbyP/scene.splinecode"
+        scene={image}
         style={{
           height: "600px",
           width: "clamp(400px,600px,650px)",

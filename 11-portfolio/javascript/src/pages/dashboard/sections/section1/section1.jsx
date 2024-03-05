@@ -15,13 +15,23 @@ const Section1 = () => {
       }
     )
   );
+  const image = useSelector(
+    createSelector(
+      (mode) => {
+        return mode;
+      },
+      (content) => {
+        return content.content.dashboard.section1.image;
+      }
+    )
+  );
 
   return (
     <section
       className={`position-relative d-flex justify-content-around align-items-center flex-wrap-reverse ${styles["section-1"]}`}
     >
       <LeftSide content={content} />
-      <RightSide />
+      <RightSide image={image} />
     </section>
   );
 };

@@ -1,5 +1,6 @@
 import { createSlice, configureStore } from "@reduxjs/toolkit";
 import Logo from "../assets/logo-blue.svg";
+import PortfolioSection1Image from "../assets/business-entrepreneurship-and-growth.png";
 
 const contentSlice = createSlice({
   name: "content",
@@ -23,6 +24,7 @@ const contentSlice = createSlice({
         secondH1: "Front-end",
         thirdH1: "Developer",
         firstH3: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        image: "https://prod.spline.design/XFvUA1JiKwHfUbyP/scene.splinecode",
       },
       section2: {
         title: {
@@ -74,6 +76,16 @@ const contentSlice = createSlice({
           "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         secondPartParagraph:
           "Suscipit maiores cumque aliquam tempore exercitationem perspiciatis facere eligendi nam fugit, accusantium ea. Obcaecati, vel. Nisi, modi quibusdam rerum aperiam doloremque ducimus!",
+        image: PortfolioSection1Image,
+      },
+      section2: {
+        repositorySelectLabelName: "Repository",
+        repositorySelectLabelValuesAndNames: [
+          { value: "HTML-CSS-Bootstrap", name: "HTML-CSS-Bootstrap" },
+          { value: "JavaScript", name: "JavaScript" },
+          { value: "TypeScript", name: "TypeScript" },
+          { value: "React.js", name: "React.js" },
+        ],
       },
     },
     footer: {

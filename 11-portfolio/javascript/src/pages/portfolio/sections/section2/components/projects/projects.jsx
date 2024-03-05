@@ -6,12 +6,15 @@ import {
   CardMedia,
   Button,
   Typography,
+  Box,
+  Divider,
 } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LanguageIcon from "@mui/icons-material/Language";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { fetchProjects } from "../../../../../../util/http";
+import styles from "./projects.module.scss";
 
 const Projects = () => {
   const params = useParams();
@@ -30,15 +33,24 @@ const Projects = () => {
         <Card sx={{ maxWidth: 345 }} key={index}>
           <CardMedia
             component="img"
-            alt="green iguana"
+            alt={project.image}
             height="140"
             image={project.image}
           />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography
+              gutterBottom
+              variant="h5"
+              component="div"
+              className={styles["card-title"]}
+            >
               {project.title}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography
+              variant="body2"
+              color="text.secondary"
+              className={styles["card-description"]}
+            >
               {project.description}
             </Typography>
           </CardContent>
@@ -55,7 +67,12 @@ const Projects = () => {
     });
   }
 
-  return content;
+  return (
+    <Box>
+      <div className="d-flex flex-wrap gap-3 mb-4">{content}</div>
+      <Divider style={{ background: "gray" }} />
+    </Box>
+  );
 };
 
 export default Projects;
