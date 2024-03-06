@@ -11,26 +11,33 @@ import {
 } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LanguageIcon from "@mui/icons-material/Language";
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { fetchProjects } from "../../../../../../util/http";
 import styles from "./projects.module.scss";
 
 const Projects = () => {
   const params = useParams();
+  let [searchParams, setSearchParams] = useSearchParams();
   let content;
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ["projects", params],
     queryFn: () => fetchProjects(),
     staleTime: 10000,
   });
-  if (isLoading) {
-    content = <CircularProgress />;
-  }
-  if (data) {
-    content = data.map((project, index) => {
+
+  function createContent(content) {
+    if (content.length === 0) {
+      return "Nothing found";
+    }
+    return content.map((project, index) => {
       return (
-        <Card sx={{ maxWidth: 345 }} key={index}>
+        <Card
+          sx={{ maxWidth: 345 }}
+          key={index}
+          className={styles.card}
+          elevation={3}
+        >
           <CardMedia
             component="img"
             alt={project.image}
@@ -66,7 +73,21 @@ const Projects = () => {
       );
     });
   }
+  function sortContent(content) {}
 
+  if (isLoading) {
+    content = <CircularProgress />;
+  }
+  if (data) {
+    if (!searchParams.get("search")) {
+      content = createContent(data);
+    } else if (searchParams.get("search")) {
+      const filteredData = data.filter((e) =>
+        e.title.toLowerCase().includes(searchParams.get("search"))
+      );
+      content = createContent(filteredData);
+    }
+  }
   return (
     <Box>
       <div className="d-flex flex-wrap gap-3 mb-4">{content}</div>

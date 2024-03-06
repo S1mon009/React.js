@@ -86,6 +86,13 @@ const contentSlice = createSlice({
           { value: "TypeScript", name: "TypeScript" },
           { value: "React.js", name: "React.js" },
         ],
+        sortSelectLabelName: "Sort",
+        sortSelectLabelValuesAndNames: [
+          { value: "A-Z", name: "A-Z" },
+          { value: "Z-A", name: "Z-A" },
+          { value: "Date-newest", name: "Date-newest" },
+          { value: "Date-oldest", name: "Date-oldest" },
+        ],
       },
     },
     footer: {
