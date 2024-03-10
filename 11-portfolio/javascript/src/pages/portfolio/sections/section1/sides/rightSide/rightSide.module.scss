@@ -1,0 +1,15 @@
+@import "../../../../../../mediaQueries";
+
+.right-side-img {
+  width: 43.75rem;
+}
+@include mediaQuery("max", 71.875rem) {
+  .right-side-img {
+    width: 31.25rem;
+  }
+}
+@include mediaQuery("max", 45rem) {
+  .right-side-img {
+    width: 100%;
+  }
+}

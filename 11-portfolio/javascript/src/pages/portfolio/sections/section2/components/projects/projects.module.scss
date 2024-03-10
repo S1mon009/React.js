@@ -1,0 +1,19 @@
+@import "../../../../../../commonClassed";
+
+.card {
+  img {
+    cursor: pointer;
+  }
+  .card-title {
+    cursor: pointer;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .card-description {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+}
