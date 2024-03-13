@@ -81,6 +81,7 @@ const contentSlice = createSlice({
       section2: {
         repositorySelectLabelName: "Repository",
         repositorySelectLabelValuesAndNames: [
+          { value: "", name: "All" },
           { value: "HTML-CSS-Bootstrap", name: "HTML-CSS-Bootstrap" },
           { value: "JavaScript", name: "JavaScript" },
           { value: "TypeScript", name: "TypeScript" },
@@ -90,8 +91,6 @@ const contentSlice = createSlice({
         sortSelectLabelValuesAndNames: [
           { value: "A-Z", name: "A-Z" },
           { value: "Z-A", name: "Z-A" },
-          { value: "Date-newest", name: "Date-newest" },
-          { value: "Date-oldest", name: "Date-oldest" },
         ],
       },
     },

@@ -8,18 +8,22 @@ import Projects from "./components/projects/projects";
 import styles from "./section2.module.scss";
 
 const Section2 = () => {
-  const [repository, setRepository] = useState();
-  const [sort, setSort] = useState();
   const navigate = useNavigate();
   let [searchParams, setSearchParams] = useSearchParams();
-  const [searchValue, setSearchValue] = useState(
-    searchParams.get("search") || ""
-  );
-
+  const [sort, setSort] = useState("A-Z");
+  const [repository, setRepository] = useState("");
+  console.log(repository);
   function handleSearch(value) {
     setSearchParams({ search: value });
     navigate(`/portfolio?search=${encodeURIComponent(value)}`);
   }
+  function handleSort(event) {
+    setSort(event.target.value);
+  }
+  function handleRepository(event) {
+    setRepository(event.target.value);
+  }
+
   const content = useSelector(
     createSelector(
       (mode) => {
@@ -33,8 +37,19 @@ const Section2 = () => {
 
   return (
     <section className={styles["section-2"]}>
-      <Menu content={content} handleSearch={handleSearch} />
-      <Projects />
+      <Menu
+        content={content}
+        handleSearch={handleSearch}
+        sortValue={sort}
+        handleSort={handleSort}
+        repositoryValue={repository}
+        handleRepository={handleRepository}
+      />
+      <Projects
+        search={searchParams.get("search")}
+        sort={sort}
+        repository={repository}
+      />
     </section>
   );
 };

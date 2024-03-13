@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   CircularProgress,
   Card,
@@ -16,9 +17,9 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchProjects } from "../../../../../../util/http";
 import styles from "./projects.module.scss";
 
-const Projects = () => {
+const Projects = ({ search, sort, repository }) => {
   const params = useParams();
-  let [searchParams, setSearchParams] = useSearchParams();
+  const [conditions, setConditions] = useState([search, sort, repository]);
   let content;
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ["projects", params],
@@ -26,11 +27,18 @@ const Projects = () => {
     staleTime: 10000,
   });
 
-  function createContent(content) {
-    if (content.length === 0) {
+  function createContent(data, search, repository, sort) {
+    let temporaryContent;
+
+    temporaryContent = filterContent(data, search, repository);
+
+    if (temporaryContent.length === 0) {
       return "Nothing found";
     }
-    return content.map((project, index) => {
+
+    temporaryContent = sortContent(data, sort);
+
+    return temporaryContent.map((project, index) => {
       return (
         <Card
           sx={{ maxWidth: 345 }}
@@ -73,24 +81,58 @@ const Projects = () => {
       );
     });
   }
-  function sortContent(content) {}
+  function sortContent(data, sort) {
+    if (sort === "A-Z") {
+      data.sort((a, b) => {
+        if (a.title < b.title) {
+          return -1;
+        }
+        if (a.title > b.title) {
+          return 1;
+        }
+        return 0;
+      });
+    }
+    if (sort === "Z-A") {
+      data.sort((a, b) => a.title - b.title);
+      return data;
+    }
+    return data;
+  }
+  function filterContent(data, search, repository) {
+    if (search || repository) {
+      data = data.filter((e) => {
+        if (search) {
+          return e.title.toLowerCase().includes(search);
+        }
+        if (repository) {
+          return e.repository === repository;
+        }
+        if (search && repository) {
+          return (
+            e.title.toLowerCase().includes(search) &&
+            e.repository === repository
+          );
+        }
+      });
+      return data;
+    }
+    return data;
+  }
 
   if (isLoading) {
     content = <CircularProgress />;
   }
+  if (isError || error) {
+    console.log(isError);
+    content = "Error";
+  }
   if (data) {
-    if (!searchParams.get("search")) {
-      content = createContent(data);
-    } else if (searchParams.get("search")) {
-      const filteredData = data.filter((e) =>
-        e.title.toLowerCase().includes(searchParams.get("search"))
-      );
-      content = createContent(filteredData);
-    }
+    content = createContent(data, search, repository, sort);
   }
   return (
     <Box>
-      <div className="d-flex flex-wrap gap-3 mb-4">{content}</div>
+      <div className={`d-grid mb-4 ${styles.cards}`}>{content}</div>
       <Divider style={{ background: "gray" }} />
     </Box>
   );

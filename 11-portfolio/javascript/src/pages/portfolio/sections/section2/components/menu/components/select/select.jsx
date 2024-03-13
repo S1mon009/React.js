@@ -5,6 +5,8 @@ const SelectMenu = ({
   selectValuesAndNames,
   defaultValue,
   minWidth,
+  value,
+  onChange,
 }) => {
   return (
     <FormControl sx={{ minWidth: minWidth ? minWidth : 150 }}>
@@ -12,11 +14,11 @@ const SelectMenu = ({
       <Select
         labelId="repository-select-label"
         id="repository-select-label"
-        // value={age}
+        value={value}
         label={selectName}
         defaultValue={defaultValue ? defaultValue : ""}
         className="me-3"
-        // onChange={handleChange}
+        onChange={onChange}
       >
         {selectValuesAndNames.map((selectValueAndName, index) => {
           return (

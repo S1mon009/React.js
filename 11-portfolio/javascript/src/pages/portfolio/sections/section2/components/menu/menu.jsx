@@ -2,7 +2,14 @@ import { Box, Paper } from "@mui/material";
 import Search from "./components/search/search";
 import SelectMenu from "./components/select/select";
 
-const Menu = ({ content, handleSearch }) => {
+const Menu = ({
+  content,
+  handleSearch,
+  sortValue,
+  handleSort,
+  repositoryValue,
+  handleRepository,
+}) => {
   return (
     <Box className="mb-4">
       <Paper elevation={3} className="p-3">
@@ -10,12 +17,16 @@ const Menu = ({ content, handleSearch }) => {
         <SelectMenu
           selectName={content.repositorySelectLabelName}
           selectValuesAndNames={content.repositorySelectLabelValuesAndNames}
+          value={repositoryValue}
+          onChange={handleRepository}
         />
         <SelectMenu
           selectName={content.sortSelectLabelName}
           selectValuesAndNames={content.sortSelectLabelValuesAndNames}
           defaultValue={content.sortSelectLabelValuesAndNames[0].value}
           minWidth={100}
+          value={sortValue}
+          onChange={handleSort}
         />
       </Paper>
     </Box>

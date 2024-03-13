@@ -1,15 +1,17 @@
 [
   {
     "image": "https://github.com/S1mon009/React.js/assets/105738321/4d5fe730-2822-44ff-b902-fd647e5c00f6",
-    "title": "Project 1",
+    "title": "Project 23",
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit maiores cumque aliquam tempore exercitationem perspiciatis facere eligendi nam fugit, accusantium ea. Obcaecati, vel. Nisi, modi quibusdam rerum aperiam doloremque ducimus!",
+    "repository": "React.js",
     "github": "https://github.com",
     "live-demo": ""
   },
   {
     "image": "https://github.com/S1mon009/React.js/assets/105738321/77d524d1-4efb-4ebc-9bee-0b629d2c1e3a",
-    "title": "Project 2",
+    "title": "Project 1",
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit maiores cumque aliquam tempore exercitationem perspiciatis facere eligendi nam fugit, accusantium ea. Obcaecati, vel. Nisi, modi quibusdam rerum aperiam doloremque ducimus!",
+    "repository": "React.js",
     "github": "https://github.com",
     "live-demo": ""
   },
@@ -17,13 +19,15 @@
     "image": "https://github.com/S1mon009/React.js/assets/105738321/cc037bc8-9eff-4353-bc3a-78dcbdbc94df",
     "title": "Project 3",
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit maiores cumque aliquam tempore exercitationem perspiciatis facere eligendi nam fugit, accusantium ea. Obcaecati, vel. Nisi, modi quibusdam rerum aperiam doloremque ducimus!",
+    "repository": "JavaScript",
     "github": "https://github.com",
     "live-demo": ""
   },
   {
     "image": "https://github.com/S1mon009/React.js/assets/105738321/337eb2dc-4f53-49ed-b742-b3cf0935bc32",
-    "title": "Project 4",
+    "title": "Project 14",
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit maiores cumque aliquam tempore exercitationem perspiciatis facere eligendi nam fugit, accusantium ea. Obcaecati, vel. Nisi, modi quibusdam rerum aperiam doloremque ducimus!",
+    "repository": "TypeScript",
     "github": "https://github.com",
     "live-demo": ""
   }
