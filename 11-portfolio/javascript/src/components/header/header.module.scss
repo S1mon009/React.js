@@ -1,15 +1,17 @@
 @import "../../colors";
 
+$borderBottomHeight: 0.0625rem solid;
+
 header {
   height: 4.375rem;
   z-index: 2;
   &.light {
     background: $header-background-color-light;
-    border-bottom: 0.0625rem solid $border-bottom-light;
+    border-bottom: $borderBottomHeight $border-bottom-light;
   }
   &.dark {
     background: $header-background-color-dark;
-    border-bottom: 0.0625rem solid $border-bottom-dark;
+    border-bottom: $borderBottomHeight $border-bottom-dark;
   }
   a {
     &.light {

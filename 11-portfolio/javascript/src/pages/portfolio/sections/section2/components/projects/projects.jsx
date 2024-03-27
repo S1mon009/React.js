@@ -124,7 +124,6 @@ const Projects = ({ search, sort, repository }) => {
     content = <CircularProgress />;
   }
   if (isError || error) {
-    console.log(isError);
     content = "Error";
   }
   if (data) {

@@ -17,26 +17,15 @@ const Header = memo(() => {
     right: false,
   });
   const dispatch = useDispatch();
+
   const { logo, links } = useSelector(
     createSelector(
-      (mode) => {
-        return mode;
-      },
-      (content) => {
-        return content.content;
-      }
+      (state) => state.content,
+      (content) => content
     )
   );
-  const mode = useSelector(
-    createSelector(
-      (mode) => {
-        return mode.mode.mode;
-      },
-      (content) => {
-        return content;
-      }
-    )
-  );
+
+  const mode = useSelector((state) => state.mode.mode);
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (
@@ -46,28 +35,22 @@ const Header = memo(() => {
     ) {
       return;
     }
-
     setState({ ...state, [anchor]: open });
   };
-  const changeModeLight = () => {
-    dispatch(modeActions.setMode("light"));
+
+  const changeMode = (mode) => {
+    dispatch(modeActions.setMode(mode));
   };
-  const changeModeDark = () => {
-    dispatch(modeActions.setMode("dark"));
-  };
+
+  const headerStyle = mode === "dark" ? styles.dark : styles.light;
 
   return (
     <>
       <header
-        className={`position-fixed w-100 d-flex justify-content-between align-items-center p-3 ${
-          mode === "dark" ? styles.dark : styles.light
-        }`}
+        className={`position-fixed w-100 d-flex justify-content-between align-items-center p-3 ${headerStyle}`}
       >
         <LeftMenu toggleDrawer={toggleDrawer("left", true)} logo={logo} />
-        <Links
-          links={links}
-          mode={mode === "dark" ? styles.dark : styles.light}
-        />
+        <Links links={links} mode={headerStyle} />
         <RightMenu toggleDrawer={toggleDrawer("right", true)} mode={mode} />
         <CustomDrawer
           anchor={"left"}
@@ -90,7 +73,7 @@ const Header = memo(() => {
             anchor={"right"}
             toggleDrawer={toggleDrawer("right", false)}
             mode={mode}
-            changeMode={[changeModeLight, changeModeDark]}
+            changeMode={changeMode}
           />
         </CustomDrawer>
       </header>

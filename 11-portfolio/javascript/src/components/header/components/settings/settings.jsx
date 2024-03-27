@@ -39,14 +39,14 @@ const Settings = ({ anchor, toggleDrawer, mode, changeMode }) => {
             >
               <ToggleButton
                 value="light"
-                onClick={changeMode[0]}
+                onClick={changeMode.bind(null, "light")}
                 className="w-50"
               >
                 Light
               </ToggleButton>
               <ToggleButton
                 value="dark"
-                onClick={changeMode[1]}
+                onClick={changeMode.bind(null, "dark")}
                 className="w-50"
               >
                 Dark
