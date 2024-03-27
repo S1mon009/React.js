@@ -1,10 +1,10 @@
 @import "../../../../node_modules//bootstrap/scss/bootstrap.scss";
 @import "../../../../node_modules//bootstrap/scss/variables.scss";
 .accordion {
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   .accordion-header {
-    padding: 16px;
-    grid-gap: 10px;
+    padding: 1rem;
+    grid-gap: 0.625rem;
     cursor: pointer;
     .icon {
       transform-origin: center;
@@ -12,20 +12,20 @@
     }
   }
   .accordion-content {
-    padding: 10px;
-    padding-left: 48px;
-    margin-bottom: 16px;
+    padding: 0.625rem;
+    padding-left: 3rem;
+    margin-bottom: 1rem;
   }
   &:nth-child(1) {
-    border-left: 4px solid $orange-500;
+    border-left: 0.25rem solid $orange-500;
     background: $orange-100;
   }
   &:nth-child(2) {
-    border-left: 4px solid $red-500;
+    border-left: 0.25rem solid $red-500;
     background: $red-100;
   }
   &:nth-child(3) {
-    border-left: 4px solid $blue-500;
+    border-left: 0.25rem solid $blue-500;
     background: $blue-100;
   }
 }

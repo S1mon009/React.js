@@ -8,21 +8,21 @@ form {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(5, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 5px;
-  width: 300px;
-  outline: 3px solid $app-border-color;
-  outline-offset: 5px;
-  padding: 15px;
+  grid-column-gap: 0rem;
+  grid-row-gap: 0.3125rem;
+  width: 18.75rem;
+  outline: 0.1875rem solid $app-border-color;
+  outline-offset: 0.3125rem;
+  padding: 0.9375rem;
   background: $app-background-color;
   .code {
     text-align: center;
-    font-size: 25px;
-    letter-spacing: 15px;
-    margin-top: 10px;
+    font-size: 1.5625rem;
+    letter-spacing: 0.9375rem;
+    margin-top: 0.625rem;
   }
   .checked {
-    padding-top: 15px;
+    padding-top: 0.9375rem;
     text-align: center;
     .correct {
       color: $correct-code-color;
@@ -35,7 +35,7 @@ form {
     border: none;
     outline: none;
     font-weight: 600;
-    font-size: 17px;
+    font-size: 1.0625rem;
     color: $app-background-color;
     background: $check-button-background-color;
     cursor: pointer;

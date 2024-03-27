@@ -5,13 +5,13 @@
   transform: translate(-50%, -50%);
   display: grid;
   grid-template-columns: 1fr;
-  row-gap: 10px;
+  row-gap: 0.625rem;
   overflow: hidden;
   img {
-    width: 50px;
+    width: 3.125rem;
     margin: 0 auto;
   }
-  @media (max-width: 500px) {
+  @media (max-width: 31.25rem) {
     width: 80%;
   }
 }

@@ -16,9 +16,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: calc(50% - 20px);
-    font-size: 20px;
-    padding: 50px 20px;
+    width: calc(50% - 1.25rem);
+    font-size: 1.25rem;
+    padding: 3.125rem 1.25rem;
     color: $second-color;
     &::before {
       content: "";
@@ -28,7 +28,7 @@
       top: 0;
       left: 0;
       background-color: $second-color;
-      border-radius: 20px;
+      border-radius: 1.25rem;
       mix-blend-mode: difference;
       pointer-events: none;
       z-index: 2;
@@ -42,12 +42,12 @@
       right: 0;
       transform: rotate(-5deg);
       background-color: $first-color;
-      border: 5px dashed $second-color;
-      border-radius: 20px;
+      border: 0.3125rem dashed $second-color;
+      border-radius: 1.25rem;
       pointer-events: none;
       z-index: -1;
     }
-    @media (max-width: 650px) {
+    @media (max-width: 40.625rem) {
       width: 80%;
     }
   }

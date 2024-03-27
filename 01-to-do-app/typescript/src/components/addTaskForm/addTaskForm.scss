@@ -5,36 +5,36 @@ form {
   top: 10%;
   left: 50%;
   transform: translateX(-50%);
-  width: clamp(200px, 80%, 400px);
-  padding: 80px 20px 20px 20px;
+  width: clamp(12.5rem, 80%, 25rem);
+  padding: 5rem 1.25rem 1.25rem 1.25rem;
   color: $text-color;
   background: $background-color;
-  border-radius: 10px;
-  -webkit-box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.25);
-  box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 0.625rem;
+  -webkit-box-shadow: 0.625rem 0.625rem 1.25rem 0rem rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0.625rem 0.625rem 1.25rem 0rem rgba(0, 0, 0, 0.25);
+  box-shadow: 0.625rem 0.625rem 1.25rem 0rem rgba(0, 0, 0, 0.25);
   .form-title {
     position: absolute;
-    font-size: 25px;
+    font-size: 1.5625rem;
     font-weight: 600;
-    top: 20px;
+    top: 1.25rem;
     left: 50%;
     transform: translateX(-50%);
   }
   .form-item {
     position: relative;
-    margin-bottom: 25px;
+    margin-bottom: 1.5625rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     input {
-      height: 50px;
+      height: 3.125rem;
       width: 100%;
-      padding: 0 15px;
+      padding: 0 0.9375rem;
       background: $background-color;
       color: $text-color;
-      border: 3px solid $text-color;
-      border-radius: 10px;
+      border: 0.1875rem solid $text-color;
+      border-radius: 0.625rem;
       outline: none;
       cursor: text;
     }
@@ -43,10 +43,10 @@ form {
     }
     label {
       position: absolute;
-      margin-left: 15px;
-      font-size: 17px;
-      transform: translatey(-20px);
-      padding: 0 10px;
+      margin-left: 0.9375rem;
+      font-size: 1.0625rem;
+      transform: translatey(-1.25rem);
+      padding: 0 0.625rem;
       background: $background-color;
       transition: 0.3s all;
       cursor: text;
@@ -55,19 +55,19 @@ form {
       color: $focus-color;
     }
     input:focus {
-      border: 3px solid $focus-color;
+      border: 0.1875rem solid $focus-color;
       transition: 0.3s all;
     }
   }
   button {
     width: 100%;
-    height: 50px;
+    height: 3.125rem;
     text-align: center;
-    border-radius: 10px;
-    margin-bottom: 10px;
+    border-radius: 0.625rem;
+    margin-bottom: 0.625rem;
     border: none;
     outline: none;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
   }
