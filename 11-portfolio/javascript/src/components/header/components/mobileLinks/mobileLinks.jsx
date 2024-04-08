@@ -9,6 +9,7 @@ import {
   IconButton,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
+import Each from "../../../each/each";
 import styles from "./mobileLinks.module.scss";
 
 const MobileLinks = ({ links, anchor, toggleDrawer, mode }) => {
@@ -31,29 +32,32 @@ const MobileLinks = ({ links, anchor, toggleDrawer, mode }) => {
         <Divider />
         <List>
           <div className={styles["mobile-links"]}>
-            {links.map((link, index) => {
-              return (
-                <NavLink
-                  to={link.href}
-                  className={({ isActive }) =>
-                    isActive
-                      ? `${styles.active} ${
-                          mode === "dark" ? styles.dark : styles.light
-                        }`
-                      : mode === "dark"
-                      ? styles.dark
-                      : styles.light
-                  }
-                  key={index}
-                >
-                  <ListItem disablePadding>
-                    <ListItemButton>
-                      <ListItemText primary={link.text} />
-                    </ListItemButton>
-                  </ListItem>
-                </NavLink>
-              );
-            })}
+            <Each
+              data={links}
+              render={(item, index) => {
+                return (
+                  <NavLink
+                    to={item.href}
+                    className={({ isActive }) =>
+                      isActive
+                        ? `${styles.active} ${
+                            mode === "dark" ? styles.dark : styles.light
+                          }`
+                        : mode === "dark"
+                        ? styles.dark
+                        : styles.light
+                    }
+                    key={index}
+                  >
+                    <ListItem disablePadding>
+                      <ListItemButton>
+                        <ListItemText primary={item.text} />
+                      </ListItemButton>
+                    </ListItem>
+                  </NavLink>
+                );
+              }}
+            />
           </div>
         </List>
       </List>

@@ -5,6 +5,7 @@ import MonitorIcon from "@mui/icons-material/Monitor";
 import StorageIcon from "@mui/icons-material/Storage";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import Each from "../../../../../../components/each/each";
 import styles from "./rightSide.module.scss";
 
 const RightSide = () => {
@@ -29,34 +30,37 @@ const RightSide = () => {
 
   return (
     <div className={styles["right-side"]}>
-      {categories.map((category, index) => {
-        return (
-          <SlideFromBottom
-            once={true}
-            className={styles["framer-motion-paper"]}
-            key={`${Date.now()}-${index}`}
-          >
-            <Paper
-              className="d-flex justify-content-between align-items-center p-4 paper"
-              elevation={3}
+      <Each
+        data={categories}
+        render={(item, index) => {
+          return (
+            <SlideFromBottom
+              once={true}
+              className={styles["framer-motion-paper"]}
               key={index}
             >
-              <div>
-                {category.icon}
-                <span>{category.title}</span>
-              </div>
-              <Link
-                to="portfolio"
-                onClick={setLocalActiveTypeDev.bind(null, category.title)}
+              <Paper
+                className="d-flex justify-content-between align-items-center p-4 paper"
+                elevation={3}
+                key={index}
               >
-                <div className={styles["cursoir-pointer"]}>
-                  <ArrowForwardIcon color="primary" fontSize="large" />
+                <div>
+                  {item.icon}
+                  <span>{item.title}</span>
                 </div>
-              </Link>
-            </Paper>
-          </SlideFromBottom>
-        );
-      })}
+                <Link
+                  to="portfolio"
+                  onClick={setLocalActiveTypeDev.bind(null, item.title)}
+                >
+                  <div className={styles["cursoir-pointer"]}>
+                    <ArrowForwardIcon color="primary" fontSize="large" />
+                  </div>
+                </Link>
+              </Paper>
+            </SlideFromBottom>
+          );
+        }}
+      />
     </div>
   );
 };

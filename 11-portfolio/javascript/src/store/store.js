@@ -1,6 +1,7 @@
 import { createSlice, configureStore } from "@reduxjs/toolkit";
 import Logo from "../assets/logo-blue.svg";
 import PortfolioSection1Image from "../assets/business-entrepreneurship-and-growth.png";
+import AboutMeSection1Image from "../assets/person-researching-stem-concepts.png";
 
 const contentSlice = createSlice({
   name: "content",
@@ -14,6 +15,8 @@ const contentSlice = createSlice({
     startYear: 2021,
     logo: Logo,
     github: "https://github.com/S1mon009",
+    linkedIn: "https://github.com/S1mon009",
+    instagram: "https://github.com/S1mon009",
     devCard: {
       src: "https://api.daily.dev/devcards/v2/QbIZWZ9QjwEON8mzmbenI.png?type=wide&r=1pc",
       alt: "Szymon Skałecki's Dev Card",
@@ -92,6 +95,17 @@ const contentSlice = createSlice({
           { value: "A-Z", name: "A-Z" },
           { value: "Z-A", name: "Z-A" },
         ],
+      },
+    },
+    aboutMe: {
+      section1: {
+        firstPartH1: `Hello, I'm`,
+        secondPartH1: " Simon",
+        firstPartParagraph:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        secondPartParagraph:
+          "Suscipit maiores cumque aliquam tempore exercitationem perspiciatis facere eligendi nam fugit, accusantium ea. Obcaecati, vel. Nisi, modi quibusdam rerum aperiam doloremque ducimus!",
+        image: AboutMeSection1Image,
       },
     },
     footer: {

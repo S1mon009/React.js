@@ -21,7 +21,7 @@ const Footer = memo(() => {
       }
     )
   );
-  const { links, github, devCard } = useSelector(
+  const { links, github, linkedIn, instagram, devCard } = useSelector(
     createSelector(
       (mode) => {
         return mode;
@@ -43,8 +43,8 @@ const Footer = memo(() => {
   );
   const publicsProfile = [
     { icon: <GitHubIcon />, name: "GitHub", href: github },
-    { icon: <LinkedInIcon />, name: "LinkedIn" },
-    { icon: <InstagramIcon />, name: "Instagram" },
+    { icon: <LinkedInIcon />, name: "LinkedIn", href: linkedIn },
+    { icon: <InstagramIcon />, name: "Instagram", href: instagram },
   ];
 
   return (

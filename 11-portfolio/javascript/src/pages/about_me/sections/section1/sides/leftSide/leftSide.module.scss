@@ -1,0 +1,15 @@
+@import "../../../../../../mediaQueries";
+
+.left-side {
+  width: 43.75rem;
+}
+@include mediaQuery("max", 71.875rem) {
+  .left-side {
+    width: 31.25rem;
+  }
+}
+@include mediaQuery("max", 45rem) {
+  .left-side {
+    width: 100%;
+  }
+}

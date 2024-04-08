@@ -1,4 +1,5 @@
 @import "../../../../../../commonClassed";
+@import "../../../../../../mediaQueries";
 
 .cards {
   grid-template-columns: repeat(auto-fill, minmax(18.75rem, 1fr));
@@ -18,6 +19,13 @@
       display: -webkit-box;
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
+    }
+  }
+}
+@include mediaQuery("max", 43.375rem) {
+  .cards {
+    .card {
+      margin: 0 auto;
     }
   }
 }

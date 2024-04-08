@@ -3,6 +3,8 @@ import { useSearchParams, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { createSelector } from "@reduxjs/toolkit";
 import Menu from "./components/menu/menu";
+import { useQuery } from "@tanstack/react-query";
+import { fetchProjects } from "../../../../util/http";
 import Projects from "./components/projects/projects";
 
 import styles from "./section2.module.scss";
@@ -12,7 +14,14 @@ const Section2 = () => {
   let [searchParams, setSearchParams] = useSearchParams();
   const [sort, setSort] = useState("A-Z");
   const [repository, setRepository] = useState("");
-  console.log(repository);
+
+  const { data, isLoading, isError, error } = useQuery({
+    queryKey: ["projects", searchParams.get("search"), sort, repository],
+    queryFn: () =>
+      fetchProjects({ search: searchParams.get("search"), repository, sort }),
+    staleTime: 10000,
+  });
+
   function handleSearch(value) {
     setSearchParams({ search: value });
     navigate(`/portfolio?search=${encodeURIComponent(value)}`);
@@ -46,9 +55,10 @@ const Section2 = () => {
         handleRepository={handleRepository}
       />
       <Projects
-        search={searchParams.get("search")}
-        sort={sort}
-        repository={repository}
+        data={data}
+        isLoading={isLoading}
+        isError={isError}
+        error={error}
       />
     </section>
   );

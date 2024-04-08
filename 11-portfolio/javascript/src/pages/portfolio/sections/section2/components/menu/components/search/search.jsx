@@ -1,5 +1,6 @@
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { TextField } from "@mui/material";
+import styles from "./search.module.scss";
 
 const Search = () => {
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ const Search = () => {
       id="outlined-basic"
       label="Search"
       variant="outlined"
-      className="me-3"
+      className={`me-3 ${styles.search}`}
       onChange={handleChange}
     />
   );

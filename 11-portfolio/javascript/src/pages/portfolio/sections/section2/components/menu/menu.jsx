@@ -12,7 +12,7 @@ const Menu = ({
 }) => {
   return (
     <Box className="mb-4">
-      <Paper elevation={3} className="p-3">
+      <Paper elevation={3} className="d-flex flex-wrap p-3 gap-2">
         <Search handleSearch={handleSearch} />
         <SelectMenu
           selectName={content.repositorySelectLabelName}
