@@ -1,6 +1,7 @@
 import { Suspense, memo, lazy } from "react";
 import CircularProgress from "@mui/material/CircularProgress";
 const Section1 = lazy(() => import("./sections/section1/section1"));
+const Section2 = lazy(() => import("./sections/section2/section2"));
 const Footer = lazy(() => import("../../components/footer/footer"));
 
 const AboutMe = memo(() => {
@@ -12,6 +13,7 @@ const AboutMe = memo(() => {
     >
       <main>
         <Section1 />
+        <Section2 />
         <Footer />
       </main>
     </Suspense>

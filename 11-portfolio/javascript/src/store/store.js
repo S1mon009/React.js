@@ -2,6 +2,7 @@ import { createSlice, configureStore } from "@reduxjs/toolkit";
 import Logo from "../assets/logo-blue.svg";
 import PortfolioSection1Image from "../assets/business-entrepreneurship-and-growth.png";
 import AboutMeSection1Image from "../assets/person-researching-stem-concepts.png";
+import CV from "../assets/CV.pdf";
 
 const contentSlice = createSlice({
   name: "content",
@@ -105,7 +106,44 @@ const contentSlice = createSlice({
           "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         secondPartParagraph:
           "Suscipit maiores cumque aliquam tempore exercitationem perspiciatis facere eligendi nam fugit, accusantium ea. Obcaecati, vel. Nisi, modi quibusdam rerum aperiam doloremque ducimus!",
+        CV: CV,
         image: AboutMeSection1Image,
+      },
+      section2: {
+        educations: [
+          {
+            name: "Highschool",
+            description: "| IT specialist",
+            date: "2022-08-10 - 2024-01-01",
+          },
+          {
+            name: "University",
+            description: "| IT specialist | Programming",
+            date: "2024-04-04 - present",
+          },
+        ],
+        courses: [
+          {
+            name: "Complete JavaScript Course",
+            date: "| 2023-09-13",
+            description:
+              "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+          },
+          {
+            name: "Complete React.js Course",
+            date: "| 2024-02-18",
+            description:
+              "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+          },
+        ],
+        works: [
+          {
+            name: "Frontend developer",
+            date: " | 2021-12-01 - present",
+            description:
+              "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+          },
+        ],
       },
     },
     footer: {
