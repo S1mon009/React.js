@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useSelector } from "react-redux";
 import { createSelector } from "@reduxjs/toolkit";
 import { Box } from "@mui/material";
@@ -28,5 +29,8 @@ const Section3 = () => {
     </Box>
   );
 };
+=======
+const Section3 = () => {};
+>>>>>>> 38f68f46f99276bb9c68f36e575dc20a3749edd2
 
 export default Section3;
