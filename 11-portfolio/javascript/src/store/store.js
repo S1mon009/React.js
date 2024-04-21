@@ -145,6 +145,46 @@ const contentSlice = createSlice({
           },
         ],
       },
+      section3: {
+        knowledge:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit maiores cumque aliquam tempore exercitationem perspiciatis facere eligendi nam fugit, accusantium ea. Obcaecati, vel. Nisi, modi quibusdam rerum aperiam doloremque ducimus!",
+        technologies: [
+          {
+            name: "React.js",
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+            level: "Advanced",
+          },
+          {
+            name: "JavaScript",
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+            level: "Advanced",
+          },
+          {
+            name: "Sass",
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg",
+            level: "Advanced",
+          },
+          {
+            name: "HTML",
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
+            level: "Intermediate",
+          },
+          {
+            name: "Tailwind CSS",
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+            level: "Beginner",
+          },
+        ],
+        languages: [
+          { name: "Polish", level: "Native" },
+          { name: "English", level: "B1" },
+        ],
+        advantages: [
+          { name: "Commitment" },
+          { name: "Creativity" },
+          { name: "Flexibility" },
+        ],
+      },
     },
     footer: {
       poweredBy: [
