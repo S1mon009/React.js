@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Tabs, Tab, Typography, Box, Paper, Chip } from "@mui/material";
-import CircleIcon from "@mui/icons-material/Circle";
 import Each from "../../../../../../components/each/each";
 import styles from "./rightSide.module.scss";
 
@@ -30,14 +29,24 @@ function a11yProps(index) {
   };
 }
 function chechLevel(level) {
-  if (level === "Advanced") {
-    return "success";
-  } else if (level === "Intermediate") {
-    return "default";
-  } else if (level === "Native") {
-    return "succes";
-  }
-  return "error";
+  const successValue = "success";
+  const primaryValue = "primary";
+  const defaultValue = "default";
+
+  const levelMap = new Map([
+    ["Advanced", successValue],
+    ["Native", successValue],
+    ["C1", successValue],
+    ["C2", successValue],
+    ["Intermediate", primaryValue],
+    ["B1", primaryValue],
+    ["B2", primaryValue],
+    ["Beginner", defaultValue],
+    ["A1", defaultValue],
+    ["A2", defaultValue],
+  ]);
+
+  return String(levelMap.get(level));
 }
 
 const RightSide = ({ technologies, languages, advantages }) => {
@@ -49,17 +58,26 @@ const RightSide = ({ technologies, languages, advantages }) => {
 
   return (
     <Box sx={{ width: "clamp(15.625rem,53.125rem,62.5rem)" }}>
-      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+      <Box
+        sx={{
+          borderBottom: 1,
+          borderColor: "divider",
+          maxWidth: { xs: 320, sm: "100%" },
+        }}
+      >
         <Tabs
           value={value}
           onChange={handleChange}
-          aria-label="basic tabs example"
+          variant="scrollable"
+          scrollButtons="auto"
+          aria-label="scrollable auto tabs example"
         >
           <Tab label="Technologies" {...a11yProps(0)} />
           <Tab label="Languages" {...a11yProps(1)} />
           <Tab label="Advantages" {...a11yProps(2)} />
         </Tabs>
       </Box>
+
       <CustomTabPanel value={value} index={0}>
         <div className={`d-grid ${styles["list-group"]}`}>
           <Each
@@ -82,10 +100,7 @@ const RightSide = ({ technologies, languages, advantages }) => {
                     variant="filled"
                     className="mt-1"
                     size="small"
-                    icon={<CircleIcon />}
-                  >
-                    {item.level}
-                  </Chip>
+                  />
                 </Paper>
               );
             }}
@@ -108,10 +123,7 @@ const RightSide = ({ technologies, languages, advantages }) => {
                     variant="filled"
                     className="mt-1"
                     size="small"
-                    icon={<CircleIcon />}
-                  >
-                    {item.level}
-                  </Chip>
+                  />
                 </Paper>
               );
             }}
@@ -119,7 +131,21 @@ const RightSide = ({ technologies, languages, advantages }) => {
         </div>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        Advantages
+        <div className={`d-grid ${styles["list-group"]}`}>
+          <Each
+            data={advantages}
+            render={(item, index) => {
+              return (
+                <Paper elevation={3} className="p-2 me-2 mt-2" key={index}>
+                  <div className={styles.list}>
+                    <span>{item.name}</span>
+                  </div>
+                  {item.level}
+                </Paper>
+              );
+            }}
+          />
+        </div>
       </CustomTabPanel>
     </Box>
   );
