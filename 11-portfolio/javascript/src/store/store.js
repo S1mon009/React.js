@@ -170,6 +170,11 @@ const contentSlice = createSlice({
             level: "Intermediate",
           },
           {
+            name: "Bootstrap",
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg",
+            level: "Intermediate",
+          },
+          {
             name: "Tailwind CSS",
             icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
             level: "Beginner",

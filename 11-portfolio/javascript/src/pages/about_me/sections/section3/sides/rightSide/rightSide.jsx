@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Tabs, Tab, Typography, Box, Paper, Chip } from "@mui/material";
 import Each from "../../../../../../components/each/each";
+import SlideFromBottom from "../../../../../../components/framerMotion/slideFromBottom/slideFromBottom";
 import styles from "./rightSide.module.scss";
 
 function CustomTabPanel(props) {
@@ -65,17 +66,19 @@ const RightSide = ({ technologies, languages, advantages }) => {
           maxWidth: { xs: 320, sm: "100%" },
         }}
       >
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          variant="scrollable"
-          scrollButtons="auto"
-          aria-label="scrollable auto tabs example"
-        >
-          <Tab label="Technologies" {...a11yProps(0)} />
-          <Tab label="Languages" {...a11yProps(1)} />
-          <Tab label="Advantages" {...a11yProps(2)} />
-        </Tabs>
+        <SlideFromBottom once={true}>
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            variant="scrollable"
+            scrollButtons="auto"
+            aria-label="scrollable auto tabs example"
+          >
+            <Tab label="Technologies" {...a11yProps(0)} />
+            <Tab label="Languages" {...a11yProps(1)} />
+            <Tab label="Advantages" {...a11yProps(2)} />
+          </Tabs>
+        </SlideFromBottom>
       </Box>
 
       <CustomTabPanel value={value} index={0}>
@@ -84,24 +87,26 @@ const RightSide = ({ technologies, languages, advantages }) => {
             data={technologies}
             render={(item, index) => {
               return (
-                <Paper elevation={3} className="p-2 me-2 mt-2" key={index}>
-                  <div className={styles.list}>
-                    <img
-                      src={item.icon}
-                      alt={`icon-${item.name}`}
-                      loading="lazy"
-                      className={`me-2 ${styles.icon}`}
+                <SlideFromBottom once={true}>
+                  <Paper elevation={3} className="p-2 me-2 mt-2" key={index}>
+                    <div className={styles.list}>
+                      <img
+                        src={item.icon}
+                        alt={`icon-${item.name}`}
+                        loading="lazy"
+                        className={`me-2 ${styles.icon}`}
+                      />
+                      <span>{item.name}</span>
+                    </div>
+                    <Chip
+                      label={item.level}
+                      color={chechLevel(item.level)}
+                      variant="filled"
+                      className="mt-1"
+                      size="small"
                     />
-                    <span>{item.name}</span>
-                  </div>
-                  <Chip
-                    label={item.level}
-                    color={chechLevel(item.level)}
-                    variant="filled"
-                    className="mt-1"
-                    size="small"
-                  />
-                </Paper>
+                  </Paper>
+                </SlideFromBottom>
               );
             }}
           />
@@ -113,18 +118,20 @@ const RightSide = ({ technologies, languages, advantages }) => {
             data={languages}
             render={(item, index) => {
               return (
-                <Paper elevation={3} className="p-2 me-2 mt-2" key={index}>
-                  <div className={styles.list}>
-                    <span>{item.name}</span>
-                  </div>
-                  <Chip
-                    label={item.level}
-                    color={chechLevel(item.level)}
-                    variant="filled"
-                    className="mt-1"
-                    size="small"
-                  />
-                </Paper>
+                <SlideFromBottom once={true}>
+                  <Paper elevation={3} className="p-2 me-2 mt-2" key={index}>
+                    <div className={styles.list}>
+                      <span>{item.name}</span>
+                    </div>
+                    <Chip
+                      label={item.level}
+                      color={chechLevel(item.level)}
+                      variant="filled"
+                      className="mt-1"
+                      size="small"
+                    />
+                  </Paper>
+                </SlideFromBottom>
               );
             }}
           />
@@ -136,12 +143,14 @@ const RightSide = ({ technologies, languages, advantages }) => {
             data={advantages}
             render={(item, index) => {
               return (
-                <Paper elevation={3} className="p-2 me-2 mt-2" key={index}>
-                  <div className={styles.list}>
-                    <span>{item.name}</span>
-                  </div>
-                  {item.level}
-                </Paper>
+                <SlideFromBottom once={true}>
+                  <Paper elevation={3} className="p-2 me-2 mt-2" key={index}>
+                    <div className={styles.list}>
+                      <span>{item.name}</span>
+                    </div>
+                    {item.level}
+                  </Paper>
+                </SlideFromBottom>
               );
             }}
           />
