@@ -10,7 +10,7 @@ const LeftSide = ({ content }) => {
         data={content.mostUsedTechnologies}
         render={(item, index) => {
           return (
-            <SlideFromBottom once={true} key={index}>
+            <SlideFromBottom once key={index}>
               <Paper
                 elevation={3}
                 className={`d-flex justify-content-center align-items-center ${styles["technology-card"]}`}

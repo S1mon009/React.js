@@ -17,24 +17,24 @@ const LeftSide = ({ content }) => {
 
   return (
     <div className={styles["left-side"]}>
-      <SlideFromBottom once={true}>
+      <SlideFromBottom once>
         <p className={styles.title}>
           {content.title.part1}
           <span className={styles["main-color"]}>{content.title.part2}</span>
           {content.title.part3}
         </p>
       </SlideFromBottom>
-      <SlideFromBottom once={true}>
+      <SlideFromBottom once>
         <p className={styles.description}>{content.description}</p>
       </SlideFromBottom>
       <div className={`d-flex ${styles.feautures}`}>
-        <SlideFromBottom once={true}>
+        <SlideFromBottom once>
           <div>
             <p className={styles["main-color"]}>52+</p>
             <span>Projects</span>
           </div>
         </SlideFromBottom>
-        <SlideFromBottom once={true}>
+        <SlideFromBottom once>
           <div>
             <p className={styles["main-color"]}>
               {new Date().getFullYear() - startYear}+

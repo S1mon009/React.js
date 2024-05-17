@@ -66,7 +66,7 @@ const RightSide = ({ technologies, languages, advantages }) => {
           maxWidth: { xs: 320, sm: "100%" },
         }}
       >
-        <SlideFromBottom once={true}>
+        <SlideFromBottom once>
           <Tabs
             value={value}
             onChange={handleChange}
@@ -87,7 +87,7 @@ const RightSide = ({ technologies, languages, advantages }) => {
             data={technologies}
             render={(item, index) => {
               return (
-                <SlideFromBottom once={true}>
+                <SlideFromBottom once>
                   <Paper elevation={3} className="p-2 me-2 mt-2" key={index}>
                     <div className={styles.list}>
                       <img
@@ -118,7 +118,7 @@ const RightSide = ({ technologies, languages, advantages }) => {
             data={languages}
             render={(item, index) => {
               return (
-                <SlideFromBottom once={true}>
+                <SlideFromBottom once>
                   <Paper elevation={3} className="p-2 me-2 mt-2" key={index}>
                     <div className={styles.list}>
                       <span>{item.name}</span>
@@ -143,7 +143,7 @@ const RightSide = ({ technologies, languages, advantages }) => {
             data={advantages}
             render={(item, index) => {
               return (
-                <SlideFromBottom once={true}>
+                <SlideFromBottom once>
                   <Paper elevation={3} className="p-2 me-2 mt-2" key={index}>
                     <div className={styles.list}>
                       <span>{item.name}</span>

@@ -35,7 +35,7 @@ const RightSide = () => {
         render={(item, index) => {
           return (
             <SlideFromBottom
-              once={true}
+              once
               className={styles["framer-motion-paper"]}
               key={index}
             >

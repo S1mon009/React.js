@@ -2,6 +2,7 @@ import { createSlice, configureStore } from "@reduxjs/toolkit";
 import Logo from "../assets/logo-blue.svg";
 import PortfolioSection1Image from "../assets/business-entrepreneurship-and-growth.png";
 import AboutMeSection1Image from "../assets/person-researching-stem-concepts.png";
+import ContactImage from "../assets/website-content-sections.png";
 import CV from "../assets/CV.pdf";
 
 const contentSlice = createSlice({
@@ -190,6 +191,9 @@ const contentSlice = createSlice({
           { name: "Flexibility" },
         ],
       },
+    },
+    contact: {
+      image: ContactImage,
     },
     footer: {
       poweredBy: [

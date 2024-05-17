@@ -1,0 +1,11 @@
+@import "../../../mediaQueries";
+
+.contact-image {
+  width: 38rem;
+}
+
+@include mediaQuery("max", 42.5rem) {
+  .contact-image {
+    width: 90%;
+  }
+}
