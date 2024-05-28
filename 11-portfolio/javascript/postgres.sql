@@ -9,6 +9,7 @@ create table
     repository text
   );
 
+
 insert into
   projects (image, title, description, github, liveDemo,repository)
 values
