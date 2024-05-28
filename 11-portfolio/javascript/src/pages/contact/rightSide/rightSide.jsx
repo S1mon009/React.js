@@ -13,7 +13,6 @@ const RightSide = () => {
       phoneNumber: "",
       messageRequired: "",
     },
-
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
     },
