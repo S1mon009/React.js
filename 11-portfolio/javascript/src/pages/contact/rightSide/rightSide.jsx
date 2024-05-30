@@ -1,51 +1,64 @@
+import { useState } from "react";
 import { useFormik } from "formik";
-import { Box, TextField, Stack, Button } from "@mui/material";
+import { Box, TextField, Stack, Button, Snackbar } from "@mui/material";
+import Action from "./components/action";
 import SendIcon from "@mui/icons-material/Send";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { initialValues, validationSchema } from "./formikSettings";
+import { onSubmit, onReset } from "./formikActions";
 
 const RightSide = () => {
-  const formik = useFormik({
-    initialValues: {
-      firstNameRequired: "",
-      lastNameRequired: "",
-      emailRequired: "",
-      phoneNumberCode: "+0",
-      phoneNumber: "",
-      messageRequired: "",
-    },
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
-    },
-    onReset: (values) => {
-      values.firstNameRequired = "";
-      values.lastNameRequired = "";
-      values.emailRequired = "";
-      values.phoneNumberCode = "+0";
-      values.phoneNumber = "";
-      values.messageRequired = "";
-    },
+  const [showSnackbar, setShowSnackbar] = useState(false);
+  function handleShowSnackbar() {
+    setShowSnackbar(true);
+  }
+
+  function handleCloseSnackbar(event, reason) {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setShowSnackbar(false);
+  }
+  let formik = useFormik({
+    initialValues: initialValues,
+    validationSchema: validationSchema,
+    onSubmit: onSubmit.bind(null, handleShowSnackbar),
+    onReset: onReset,
   });
+
   return (
     <Box
       component="form"
       onSubmit={formik.handleSubmit}
       onReset={formik.handleReset}
     >
+      <Snackbar
+        open={showSnackbar}
+        autoHideDuration={4000}
+        onClose={handleCloseSnackbar}
+        message="Message succesfull send"
+        action={<Action handleCloseSnackbar={handleCloseSnackbar} />}
+      />
       <div className="row">
         <div className="col">
           <TextField
+            error={Boolean(formik.errors.firstNameRequired)}
             required
             id="firstNameRequired"
             label="First name"
+            helperText={formik.errors.firstNameRequired}
             onChange={formik.handleChange}
             value={formik.values.firstNameRequired}
           />
         </div>
         <div className="col">
           <TextField
+            error={Boolean(formik.errors.lastNameRequired)}
             required
             id="lastNameRequired"
             label="Last name"
+            helperText={formik.errors.lastNameRequired}
             onChange={formik.handleChange}
             value={formik.values.lastNameRequired}
           />
@@ -54,9 +67,11 @@ const RightSide = () => {
       <div className="row mt-4">
         <div className="col">
           <TextField
+            error={Boolean(formik.errors.emailRequired)}
             required
             id="emailRequired"
             label="Email"
+            helperText={formik.errors.emailRequired}
             type="email"
             fullWidth
             onChange={formik.handleChange}
@@ -86,8 +101,10 @@ const RightSide = () => {
         </div>
         <div className="col-9">
           <TextField
+            error={Boolean(formik.errors.phoneNumber)}
             id="phoneNumber"
             label="Phone number"
+            helperText={formik.errors.phoneNumber}
             type="tel"
             fullWidth
             onChange={formik.handleChange}
@@ -98,9 +115,11 @@ const RightSide = () => {
       <div className="row mt-4">
         <div className="col">
           <TextField
+            error={Boolean(formik.errors.messageRequired)}
             required
             id="messageRequired"
             label="Message"
+            helperText={formik.errors.messageRequired}
             multiline
             rows={4}
             fullWidth
